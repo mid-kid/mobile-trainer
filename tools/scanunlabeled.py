@@ -9,8 +9,19 @@ for lineno, line in enumerate(open(argv[1])):
         continue
 
     value = int(match.group(1), 16)
+
+    if line.startswith("    ldh "):
+        print("%d: $%02x" % (lineno + 1, value))
+        continue
+
     if value < 0x100:
         # incredibly unlikely to be something in the header
+        continue
+    if value >= 0x2183 and value < 0x4000:
+        # unused part of bank 0
+        continue
+    if value >= 0x8000 and value < 0xa000:
+        # vram, used in a ton of ways depending on context
         continue
     if value >= 0xd000 and value < 0xe000:
         # switchable wram bank, hard to untangle

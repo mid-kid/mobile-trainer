@@ -160,6 +160,7 @@
 00:050c memcpy
 00:052a memcpy_rev
 00:0545 jumptable
+00:056a Call_000_056a
 00:05b6 Farcall_000_05b6
 00:05bd Farcall_000_05bd
 00:0622 banksel_hl
@@ -187,7 +188,8 @@
 00:08ea bgmap_draw_block
 ; b:height, c:width, de:start, hl:addr, a:bank
 00:0904 _bgmap_draw_block
-00:091c Farcall_000_091c
+00:091c bgmap_editflags_block
+; b:height, c:width, hl:addr, d:keep, e:set
 00:093b Call_000_093b
 00:0956 sprites_apply
 00:09b6 sprites_clear
@@ -235,6 +237,7 @@
 00:1533 Call_000_1533
 00:153d Farcall_000_153d
 00:1586 Farcall_000_1586
+00:1620 Call_000_1620
 00:1686 Call_000_1686
 00:16a2 Farcall_000_16a2
 00:16c4 Call_000_16c4
@@ -510,6 +513,48 @@
 0f:4c59 Call_00f_4c59
 0f:4d35 Call_00f_4d35
 
+; Bank 19: ???
+19:4000 Call_019_4000
+19:41cb Call_019_41cb
+19:42a1 Call_019_42a1
+19:42b7 Call_019_42b7
+19:447c Data_019_447c
+19:447c .data:b3 ; unk/dec
+19:452f Data_019_452f
+19:452f .data:3 ; unk/dec
+19:47ae Data_019_47ae
+19:47ae .data:20:2 ; unk
+19:47ce Data_019_47ce
+19:47ce .data:10 ; unk
+19:47de Data_019_47de
+19:47de .data:f ; unk
+19:481d Sprites_019_481d
+19:481d .ptrtable:4:data
+19:4821 SpriteFrameset_019_4821
+19:4821 .ptrtable:2:data
+19:4823 SpriteFrame_019_4823
+19:4823 .data:1
+19:4824 .data:4:4
+19:4828 SpriteAnim_019_4828
+19:4828 .data:1
+19:4829 .data:2:2
+19:490e Data_019_490e
+19:490e .data:4:2 ; unk
+19:4912 Data_019_4912
+19:4912 .ptrtable:2:data
+19:4914 Data_019_4914
+19:4914 .data:2c ; unk/dec
+19:4940 Pals_019_4940
+19:4940 .data:40:8
+19:4b12 Call_019_4b12
+19:4b3b Call_019_4aeb
+19:4b3e Call_019_4b3e
+19:4b47 Call_019_4b47
+19:4c1f Data_019_4c1f
+19:4c1f .data:55 ; unk/dec
+19:4d5e Data_019_4d5e
+19:4d5e .data:20:2 ; unk
+
 ; Preliminary farcall targets
 1a:4000 Farcall_01a_4000
 1c:4000 Farcall_01c_4000
@@ -584,7 +629,7 @@
 2f:7ebf Farcall_02f_7ebf
 48:4000 Farcall_048_4000
 48:403e Farcall_048_403e
-48:40a9 Farcall_048_40a9
+48:40a9 decompress
 48:415a Farcall_048_415a
 48:4223 Farcall_048_4223
 48:42d4 Farcall_048_42d4
@@ -923,6 +968,20 @@
 
 00:c000 w_oam_shadow
 ; ds $a0
+00:c0d4 w_c0d4
+; ds $fc
+00:c0d6 w_c0d6
+; db
+00:c0d8 w_c0d8
+; db
+00:c0df w_c0df
+; db
+00:c0e5 w_c0e5
+; db
+00:c0e7 w_c0e7
+; db
+00:c0e8 w_c0e8
+; db
 00:c0ef w_c0ef
 ; db
 00:c0f6 w_c0f6
@@ -958,75 +1017,14 @@
 00:cbfd w_int_joypad
 ; ds 3
 
-;01:d000 w_d000
-;; db
-;01:d001 w_bank_rom_bkp__0
-;01:d002 w_bank_rom_bkp__1
-;; dw
-;01:d003 w_d003__0
-;01:d004 w_d003__1
-;; dw
-;01:d005 w_d005
-;; ??
-;01:d006 w_d006
-;; ??
-;01:d007 w_d007
-;; ??
-;01:d008 w_d008__0
-;01:d009 w_d008__1
-;; dw
-;01:d00a w_d00a
-;; ??
-;01:d00b w_d00b
-;; ??
-;01:d00c w_d00c
-;; ??
-;01:d00d w_d00d__0
-;01:d00e w_d00d__1
-;; dw
-;01:d00f w_d00f
-;; ds 3
-;01:d01d w_d01d
-;; ??
-;01:d01a w_d01a
-;; db
-;01:d024 w_d024
-;; db
-;01:d026 w_d026__0
-;01:d027 w_d026__1
-;01:d03f w_d03f
-;; dw
-;01:d040 w_d040__s0
-;; ds $3c
-;01:d07c w_d040__s1
-;; ds $3c
-;01:d0b8 w_d040__s2
-;; ds $3c
-;01:d0f4 w_d040__s3
-;; ds $3c
-;01:d130 w_d040__s4
-;; ds $3c
-;01:d16c w_d040__s5
-;; ds $3c
-;01:d1a8 w_d040__s6
-;; ds $3c
-;01:d1e4 w_d040__s7
-;; ds $3c
-;01:d220 w_d220__s0
-;; ds $18
-;01:d238 w_d220__s1
-;; ds $18
-;01:d250 w_d220__s2
-;; ds $18
-;01:d268 w_d220__s3
-;; ds $18
-
 00:ff8a h_bank_rom__0
 00:ff8b h_bank_rom__1
 ; dw
 00:ff8c h_bank_sram
 ; db
 00:ff8d h_bank_wram
+; db
+00:ffa4 h_ffa4
 ; db
 00:ffa6 h_ffa6
 ; db
