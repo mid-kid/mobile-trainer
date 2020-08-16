@@ -657,11 +657,10 @@ class Bank:
             # add some empty lines after returns and jumps to break up the code blocks
             if instruction_name in ['ret', 'reti', 'jr', 'jp']:
                 if (
-                    instruction_name == 'jr' or
-                    (instruction_name == 'jp' and len(operand_values) > 1) or
+                    (instruction_name in ['jr', 'jp'] and len(operand_values) > 1) or
                     (instruction_name == 'ret' and len(operand_values) > 0)
                 ):
-                    # conditional or jr
+                    # conditional
                     self.append_output('')
                 else:
                     # always executes
