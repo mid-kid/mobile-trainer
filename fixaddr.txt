@@ -1,0 +1,9 @@
+audio_data_table(04:5515) pointers
+00:20a0-00:20ee point to bank 4
+data tables referenced by (00:0a82) contain pointers
+
+params - a:bank, hl:addr
+- farcall_regs(00:06e5)
+- vram_copy(00:0749)
+- vram_copy_unk(00:0787)
+- bgmap_draw_block(00:08ea)

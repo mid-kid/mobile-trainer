@@ -1,0 +1,4 @@
+db frames
+rept frames
+    db frame, duration
+endr

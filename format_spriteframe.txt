@@ -1,0 +1,4 @@
+db sprites
+rept sprites
+    db y offset, x offset, tile, attributes
+endr
