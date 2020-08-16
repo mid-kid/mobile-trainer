@@ -441,6 +441,29 @@ class Bank:
             instruction_name = rom.instruction_names[opcode]
             operands = rom.instruction_operands[opcode]
 
+        if rom.data[pc] == 0xcd:
+            if rom.data[pc + 1] == 0xd1 and rom.data[pc + 2] == 0x06:
+                length = 6
+                instruction_name = 'farcall'
+                operands = list()
+
+                addr = rom.data[pc + 3] | (rom.data[pc + 4] << 8)
+                bank = rom.data[pc + 5]
+                operand_values = (hex_byte(bank), hex_word(addr))
+
+                if self.first_pass:
+                    # make sure this is a ROM address
+                    if (addr < 0x4000 and bank == 0) or (addr >= 0x4000 and addr < 0x8000):
+                        # add the label
+                        if self.symbols.get_label(bank, addr) is None:
+                            self.symbols.add_label(bank, addr, 'Farcall_{:03x}_{:04x}'.format(bank, addr))
+                else:
+                    # fetch the label name
+                    label = self.symbols.get_label(bank, addr)
+                    if label is not None:
+                        # use the label instead of the address
+                        operand_values = (label,)
+
         if instruction_name == 'stop' or (instruction_name == 'halt' and not self.style['disable_halt_nops']):
             if rom.data[pc + 1] == 0x00:
                 # rgbds adds a nop instruction after a stop/halt, so if that instruction
