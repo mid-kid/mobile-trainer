@@ -441,28 +441,50 @@ class Bank:
             instruction_name = rom.instruction_names[opcode]
             operands = rom.instruction_operands[opcode]
 
+        farcall = False
         if rom.data[pc] == 0xcd:
             if rom.data[pc + 1] == 0xd1 and rom.data[pc + 2] == 0x06:
-                length = 6
                 instruction_name = 'farcall'
-                operands = list()
+                length = 6
+                farcall = True
+            if rom.data[pc + 1] == 0xbc and rom.data[pc + 2] == 0x06:
+                instruction_name = 'farcall_banksel'
+                length = 5
+                farcall = True
+            if rom.data[pc + 1] == 0x2e and rom.data[pc + 2] == 0x07:
+                instruction_name = 'farjump'
+                length = 6
+                farcall = True
+            if rom.data[pc + 1] == 0x16 and rom.data[pc + 2] == 0x07:
+                instruction_name = 'farjump_banksel'
+                length = 5
+                farcall = True
 
-                addr = rom.data[pc + 3] | (rom.data[pc + 4] << 8)
+        if farcall:
+            operands = list()
+
+            addr = rom.data[pc + 3] | (rom.data[pc + 4] << 8)
+            bank = None
+            if length == 6:
                 bank = rom.data[pc + 5]
                 operand_values = (hex_byte(bank), hex_word(addr))
+            else:
+                operand_values = (hex_word(addr),)
 
-                if self.first_pass:
-                    # make sure this is a ROM address
-                    if (addr < 0x4000 and bank == 0) or (addr >= 0x4000 and addr < 0x8000):
-                        # add the label
-                        if self.symbols.get_label(bank, addr) is None:
-                            self.symbols.add_label(bank, addr, 'Farcall_{:03x}_{:04x}'.format(bank, addr))
-                else:
-                    # fetch the label name
-                    label = self.symbols.get_label(bank, addr)
-                    if label is not None:
-                        # use the label instead of the address
-                        operand_values = (label,)
+            if self.first_pass and bank is not None:
+                # make sure this is a ROM address
+                if (addr < 0x4000 and bank == 0) or (addr >= 0x4000 and addr < 0x8000):
+                    # add the label
+                    if self.symbols.get_label(bank, addr) is None:
+                        self.symbols.add_label(bank, addr, 'Farcall_{:03x}_{:04x}'.format(bank, addr))
+            else:
+                # fetch the label name
+                if bank is None:
+                    bank = self.bank_number
+                label = self.symbols.get_label(bank, addr)
+                if label is not None:
+                    # use the label instead of the address
+                    operand_values = (label,)
 
         if instruction_name == 'stop' or (instruction_name == 'halt' and not self.style['disable_halt_nops']):
             if rom.data[pc + 1] == 0x00:
