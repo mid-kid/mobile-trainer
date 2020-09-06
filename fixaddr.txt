@@ -7,6 +7,7 @@ params - a:bank, hl:addr
 - vram_copy(00:0749)
 - vram_copy_unk(00:0787)
 - bgmap_draw_block(00:08ea)
+- decompress_unk(48:403e)
 - decompress(48:40a9)
 - sprites_load(00:0a82)
 - palettes_load(4f:4000)

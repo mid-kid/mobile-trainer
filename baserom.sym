@@ -1153,6 +1153,60 @@
 1f:434b Data_01f_434b
 1f:434b .data:6
 
+; Bank 22
+22:43e0 Comp_022_43e0
+22:43e0 .data:6d
+22:4468 Comp_022_4468
+22:4468 .data:25
+22:448d Comp_022_448d
+22:448d .data:6d
+22:4515 Comp_022_4515
+22:4515 .data:6d
+22:47dd Call_022_47dd
+22:481b Comp_022_481b
+22:481b .data:21
+22:483c Comp_022_483c
+22:483c .data:21
+22:485d Comp_022_485d
+22:485d .data:21
+22:487e Comp_022_487e
+22:487e .data:21
+22:48cd Call_022_48cd
+22:4a8c Data_022_4a8c
+22:4a8c .data:b
+22:4c5b Data_022_4c5b
+22:4c5b .data:7
+22:4da6 Data_022_4da6
+22:4da6 .data:7
+22:4ee9 Data_022_4ee9
+22:4ee9 .data:7
+22:50cf Call_022_50cf
+22:50e6 Call_022_50e6
+22:510b .data:5
+22:5110 TAmap_022_5110
+22:5110 .data:2d0:14
+22:53e0 TAmap_022_53e0
+22:53e0 .data:2d0:14
+22:56b0 TAmap_022_56b0
+22:56b0 .data:2d0:14
+22:5980 .data:4000
+
+; Bank 28
+28:54b0 Gfx_028_54b0
+28:54b0 .image:400
+28:58b0 Gfx_028_58b0
+28:58b0 .image:2a0
+28:5b50 Gfx_028_5b50
+28:5b50 .image:80
+28:5bd0 TAmap_028_5bd0
+28:5bd0 .data:2d0:14
+28:5ea0 Pals_028_5ea0
+28:5ea0 .data:40:8
+28:5ee0 Pals_028_5ee0
+28:5ee0 .data:40:8
+28:6e80 Sprites_028_6e80
+28:6e90 Sprites_028_6e90
+
 ; INSERT
 
 ; Preliminary farcall targets
@@ -1225,7 +1279,7 @@
 2f:6d00 Farcall_02f_6d00
 2f:7ebf Farcall_02f_7ebf
 48:4000 Farcall_048_4000
-48:403e Farcall_048_403e
+48:403e decompress_unk
 48:40a9 decompress
 48:415a Farcall_048_415a
 48:4223 Farcall_048_4223
@@ -1621,6 +1675,25 @@
 ; db
 00:c133 w_c133
 ; ds ??
+00:c167 w_c167
+; db
+00:c16b w_c16b__0
+00:c16c w_c16b__1
+; dw
+00:c16d w_c16d__0
+00:c16e w_c16d__1
+; dw
+00:c16f w_c16f
+; db
+00:c172 w_c172
+; db
+00:c1d0 w_c1d0__0
+00:c1d1 w_c1d0__1
+; dw
+00:c264 w_c264
+; db
+00:c272 w_c272
+; db
 00:c27c w_c27c
 ; db
 00:c27d w_c27d
@@ -1632,9 +1705,21 @@
 ; db
 00:c2bf w_c2bf
 ; db
+00:c2c0 w_c2c0
+; db
+00:c2c3 w_c2c3
+; db
+00:c2d5 w_c2d5__0
+00:c2d6 w_c2d5__1
+; dw
+00:c2d7 w_c2d7__0
+00:c2d8 w_c2d7__1
+; dw
 00:c2df w_vblank_occurred
 ; db
 00:c2f5 w_c2f5
+; db
+00:c69f w_c69f
 ; db
 00:cbf1 w_int_vblank
 ; ds 3
@@ -1673,7 +1758,13 @@
 ; db
 00:ffb1 h_ffb1
 ; db
-00:ffb2 h_ffb2
+00:ffb2 h_ffb2__0
+00:ffb3 h_ffb2__1
+; dw
+00:ffb4 h_ffb4__0
+00:ffb5 h_ffb4__1
+; dw
+00:ffbb h_ffbb
 ; db
 00:fff0 h_fff0__0
 00:fff1 h_fff0__1
