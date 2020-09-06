@@ -1191,7 +1191,7 @@
 22:56b0 .data:2d0:14
 22:5980 .data:4000
 
-; Bank 28
+; Bank 28 (unfinished)
 28:54b0 Gfx_028_54b0
 28:54b0 .image:400
 28:58b0 Gfx_028_58b0
@@ -1206,6 +1206,41 @@
 28:5ee0 .data:40:8
 28:6e80 Sprites_028_6e80
 28:6e90 Sprites_028_6e90
+
+; Bank 63: Adapter not connected screen
+63:402d .ptrtable:10:code
+63:407a Data_063_407a
+63:407a .data:2006
+63:6080 Gfx_063_6080
+63:6080 .image:40
+63:60c0 Gfx_063_60c0
+63:60c0 .image:400
+63:64c0 Gfx_063_64c0
+63:64c0 .image:400
+63:68c0 Gfx_063_68c0
+63:68c0 .image:400
+63:6cc0 Gfx_063_6cc0
+63:6cc0 .image:400
+63:6fc0 TAmap_063_6fc0
+63:6fc0 .data:2d0:14
+63:7290 Pals_063_7290
+63:7290 .data:40:8
+63:72d0 Pals_063_72d0
+63:72d0 .data:40:8
+63:7310 Sprites_063_7310
+63:7310 .ptrtable:8:data
+63:7318 SpriteFrameset_063_7318
+63:7318 .ptrtable:4:data
+63:731c SpriteFrame_063_731c
+63:731c .data:1
+63:731d .data:8:4
+63:7325 SpriteFrame_063_7325
+63:7325 .data:1
+63:7326 .data:4:4
+63:732a SpriteAnim_063_732a
+63:732a .data:1
+63:732b .data:4:2
+63:732f Call_063_732f
 
 ; INSERT
 
