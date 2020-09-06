@@ -8,6 +8,9 @@ params - a:bank, hl:addr
 - vram_copy_unk(00:0787)
 - bgmap_draw_block(00:08ea)
 - decompress(48:40a9)
+- sprites_load(00:0a82)
+- palettes_load(4f:4000)
+- unk_stringtable(48:42d4)
 
 High/Low inmediate pointers:
 - 1d:43d3
