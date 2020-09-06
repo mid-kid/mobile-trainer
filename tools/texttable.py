@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
+from sys import argv
+
 file = open("baserom.gbc", "rb").read()
 
-bank = 0xf
-addr = 0x4011
-size = 0x22
+bank = int(argv[1], 16)
+addr = int(argv[2], 16)
+size = int(argv[3], 16)
 
 table = 0x4000 * bank + addr - 0x4000
 

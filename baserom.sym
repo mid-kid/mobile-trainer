@@ -238,14 +238,17 @@
 00:1533 Call_000_1533
 00:153d Farcall_000_153d
 00:1586 Farcall_000_1586
-00:1620 Call_000_1620
+00:161a Data_000_161a
+00:161a .data:6
+00:1620 farget8
 00:1686 Call_000_1686
-00:16a2 Farcall_000_16a2
+00:16a2 bgmap_draw_block_diffattr
 00:16c4 Call_000_16c4
 00:16dc Call_000_16dc
 00:1711 Call_000_1711
 00:172d Call_000_172d
 00:1770 .data:930
+00:20a6 Call_000_20a6
 00:20ac Call_000_20ac
 00:20b2 Call_000_20b2
 00:20b8 Call_000_20b8
@@ -556,7 +559,7 @@
 19:4d5e Data_019_4d5e
 19:4d5e .data:20:2 ; unk
 
-; Bank 1A: ???
+; Bank 1a: ???
 1a:4000 Farcall_01a_4000
 1a:4163 .ptrtable:a:code
 1a:437b Data_01a_437b
@@ -846,9 +849,145 @@
 1a:55a8 Sprites_01a_55a8
 1a:55a8 .ptrtable:2c:data
 
-; Preliminary farcall targets
+; Bank 1b: ???
+1b:4000 .data:40:8 ; pals?
+1b:41c3 .ptrtable:a:code
+1b:4314 Data_01b_4314
+1b:4314 .data:5d
+1b:4430 Data_01b_4430
+1b:4430 .data:20:2
+
+; Bank 1c: ???
 1c:4000 Farcall_01c_4000
+1c:4010 .ptrtable:6:code
+
+; Bank 1d: Email
 1d:4000 Farcall_01d_4000
+1d:41a0 .ptrtable:a:code
+1d:430d Data_01d_430d
+1d:430d .data:10:2
+1d:431d Data_01d_431d
+1d:431d .data:8
+1d:4383 Data_01d_4383
+1d:4383 .data:10:2
+1d:4393 Data_01d_4393
+1d:4393 .data:8
+1d:43fa Strings_01a_43fa
+1d:43fa .data:1
+1d:43fb .ptrtable:1c:data
+1d:4417 String_01d_4417
+1d:4417 .data:11
+1d:4428 String_01d_4428
+1d:4428 .data:3f
+1d:4467 String_01d_4467
+1d:4467 .data:d
+1d:4474 String_01d_4474
+1d:4474 .data:1d
+1d:4491 String_01d_4491
+1d:4491 .data:f
+1d:44a0 String_01d_44a0
+1d:44a0 .data:25
+1d:44c5 String_01d_44c5
+1d:44c5 .data:f
+1d:44d4 String_01d_44d4
+1d:44d4 .data:2b
+1d:44ff String_01d_44ff
+1d:44ff .data:d
+1d:450c String_01d_450c
+1d:450c .data:3d
+1d:4549 String_01d_4549
+1d:4549 .data:d
+1d:4556 String_01d_4556
+1d:4556 .data:2b
+1d:4581 String_01d_4581
+1d:4581 .data:11
+1d:4592 String_01d_4592
+1d:4592 .data:2f
+1d:45c1 TAmap_01d_45c1
+1d:45c1 .data:2d0:14
+1d:4891 TAmap_01d_4891
+1d:4891 .data:1e0:a
+1d:4a71 TAmap_01d_4a71
+1d:4a71 .data:1e0:a
+1d:4c51 Tmap_01d_4c51
+1d:4c51 .data:30:8
+1d:4c81 Tmap_01d_4c81
+1d:4c81 .data:30:8
+1d:4cb1 Amap_01d_4cb1
+1d:4cb1 .data:30:8
+1d:4ce1 Amap_01d_4ce1
+1d:4ce1 .data:30:8
+1d:4d11 .data:f
+1d:4d20 Gfx_01d_4d20
+1d:4d20 .image:190
+1d:4eb0 Gfx_01d_4eb0
+1d:4eb0 .image:400
+1d:52b0 Gfx_01d_52b0
+1d:52b0 .image:400
+1d:56b0 Gfx_01d_56b0
+1d:56b0 .image:380:w64
+1d:5a30 Gfx_01d_5a30
+1d:5a30 .image:400
+1d:5e30 Gfx_01d_5e30
+1d:5e30 .image:400
+1d:6230 Pals_01d_6230
+1d:6230 .data:40:8
+1d:6270 Pals_01d_6270
+1d:6270 .data:40:8
+1d:62b0 SpriteFrameset_01d_62b0
+1d:62b0 .ptrtable:12:data
+1d:62c2 SpriteFrame_01d_62c2
+1d:62c2 .data:1
+1d:62c3 .data:18:4
+1d:62db SpriteFrame_01d_62db
+1d:62db .data:1
+1d:62dc .data:18:4
+1d:62f4 SpriteFrame_01d_62f4
+1d:62f4 .data:1
+1d:62f5 .data:18:4
+1d:630d SpriteFrame_01d_630d
+1d:630d .data:1
+1d:630e .data:18:4
+1d:6326 SpriteFrame_01d_6326
+1d:6326 .data:1
+1d:6327 .data:18:4
+1d:633f SpriteFrame_01d_633f
+1d:633f .data:1
+1d:6340 .data:18:4
+1d:6358 SpriteFrame_01d_6358
+1d:6358 .data:1
+1d:6359 .data:18:4
+1d:6371 SpriteFrame_01d_6371
+1d:6371 .data:1
+1d:6372 .data:18:4
+1d:638a SpriteFrame_01d_638a
+1d:638a .data:1
+1d:638b .data:18:4
+1d:63a3 SpriteAnim_01d_63a3
+1d:63a3 .data:1
+1d:63a4 .data:12:2
+1d:63b6 Sprites_01d_63b6
+1d:63b6 .ptrtable:4:data
+
+; Bank 1e: Internet GFX
+1e:4000 Strings_01e_4000
+1e:4000 .data:1
+1e:4001 .ptrtable:c:data
+1e:400d String_01e_400d
+1e:400d .data:7
+1e:4014 String_01e_4014
+1e:4014 .data:2f
+1e:4043 String_01e_4043
+1e:4043 .data:d
+1e:4050 String_01e_4050
+1e:4050 .data:4f
+1e:409f String_01e_409f
+1e:409f .data:7
+1e:40a6 String_01e_40a6
+1e:40a6 .data:31
+1e:40d7 .data:24b4 ; end: 658b
+
+; Preliminary farcall targets
 1f:4000 Farcall_01f_4000
 22:4000 Farcall_022_4000
 22:4fa9 Farcall_022_4fa9
@@ -922,7 +1061,7 @@
 48:40a9 decompress
 48:415a Farcall_048_415a
 48:4223 Farcall_048_4223
-48:42d4 Farcall_048_42d4
+48:42d4 unk_stringtable
 48:4460 Farcall_048_4460
 48:44e0 Farcall_048_44e0
 48:4540 Farcall_048_4540
@@ -1268,17 +1407,35 @@
 ; db
 00:c0e5 w_c0e5
 ; db
+00:c0e6 w_c0e6
+; db
 00:c0e7 w_c0e7
 ; db
 00:c0e8 w_c0e8
 ; db
+00:c0e9 w_c0e9
+; db
+00:c0ea w_c0ea
+; db
+00:c0eb w_c0eb
+; db
+00:c0ec w_c0ec
+; db
+00:c0ed w_c0ed__0
+00:c0ee w_c0ed__1
+; dw
 00:c0ef w_c0ef
 ; db
+00:c0f0 w_c0f0__0
+00:c0f1 w_c0f0__1
+; dw
 00:c0f6 w_c0f6
 ; db
-00:c10e w_c10e__0
-00:c10f w_c10e__1
+00:c10e w_attrmap_addr__0
+00:c10f w_attrmap_addr__1
 ; dw
+00:c12e w_c12e
+; db
 00:c133 w_c133
 ; ds ??
 00:c27c w_c27c

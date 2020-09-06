@@ -7,3 +7,8 @@ params - a:bank, hl:addr
 - vram_copy(00:0749)
 - vram_copy_unk(00:0787)
 - bgmap_draw_block(00:08ea)
+- decompress(48:40a9)
+
+High/Low inmediate pointers:
+- 1d:43d3
+- 1d:43ac
