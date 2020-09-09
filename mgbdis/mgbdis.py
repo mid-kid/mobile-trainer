@@ -859,6 +859,9 @@ class Symbols:
 
             else:
                 # add the label
+                formatted_bank = format_hex('{:03x}'.format(bank))
+                formatted_address = format_hex('{:04x}'.format(address))
+                label = label.replace("@", "{0}_{1}".format(formatted_bank, formatted_address))
                 self.add_label(bank, address, label)
 
     def add_block(self, bank, address, block_type, length, arguments = None):
