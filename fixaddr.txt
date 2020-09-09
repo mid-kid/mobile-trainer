@@ -5,7 +5,7 @@ data tables referenced by (00:0a82) contain pointers
 params - a:bank, hl:addr
 - farcall_regs(00:06e5)
 - vram_copy(00:0749)
-- vram_copy_unk(00:0787)
+- gfx_load(00:0787)
 - bgmap_draw_block(00:08ea)
 - decompress_unk(48:403e)
 - decompress(48:40a9)
@@ -16,3 +16,8 @@ params - a:bank, hl:addr
 High/Low inmediate pointers:
 - 1d:43d3
 - 1d:43ac
+- 67:5460
+- 67:55ac
+- 67:5a92
+- 67:5efe
+- 67:64a2

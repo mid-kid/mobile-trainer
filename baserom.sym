@@ -176,7 +176,7 @@
 00:0716 farjump_banksel
 00:072e farjump
 00:0749 vram_copy
-00:0787 vram_copy_unk
+00:0787 gfx_load
 ; de:dest, hl:addr, a:bank, b:lytarget, c:tiles
 00:07cb bgmap_apply
 00:07fb bgmap_apply_window
@@ -186,7 +186,7 @@
 00:0887 Farcall_000_0887
 00:08b7 lcd_wait
 00:08ca bgmap_copy_block
-00:08ea bgmap_draw_block
+00:08ea bgmap_load_block
 ; b:height, c:width, de:start, hl:addr, a:bank
 00:0904 _bgmap_draw_block
 00:091c bgmap_editflags_block
@@ -1149,6 +1149,7 @@
 1e:656d .data:2:2
 1e:656f Sprites_01e_656f
 1e:656f .ptrtable:1c:data
+1f:4000 Farcall_01f_4000
 1f:41e9 .ptrtable:a:code
 1f:434b Data_01f_434b
 1f:434b .data:6
@@ -1195,7 +1196,7 @@
 28:54b0 Gfx_028_54b0
 28:54b0 .image:400
 28:58b0 Gfx_028_58b0
-28:58b0 .image:2a0
+28:58b0 .image:2a0:w16
 28:5b50 Gfx_028_5b50
 28:5b50 .image:80
 28:5bd0 TAmap_028_5bd0
@@ -1206,6 +1207,147 @@
 28:5ee0 .data:40:8
 28:6e80 Sprites_028_6e80
 28:6e90 Sprites_028_6e90
+
+; Bank 4a (unfinished)
+4a:4000 Sprites_04a_4000
+4a:5f80 Gfx_04a_5f80
+4a:5f80 .image:100
+4a:6080 Gfx_04a_6080
+4a:6080 .image:400
+4a:6480 Gfx_04a_6480
+4a:6480 .image:400
+4a:6580 Pals_04a_6580
+4a:6580 .data:40:8
+4a:65c0 Pals_04a_65c0
+4a:65c0 .data:40:8
+4a:6600 TAmap_04a_6600
+4a:6600 .data:2d0:14
+4a:68d0 Sprites_04a_68d0
+4a:6920 Gfx_04a_6920
+4a:6920 .image:400
+4a:6d20 Gfx_04a_6d20
+4a:6d20 .image:400
+4a:7120 TAmap_04a_7120
+4a:7120 .data:c8:14
+4a:71e8 TAmap_04a_71e8
+4a:71e8 .data:c8:14
+4a:72b0 TAmap_04a_72b0
+4a:72b0 .data:c8:14
+
+; Bank 4b (unfinished)
+4b:6a90 Gfx_04b_6a90
+4b:6a90 .image:400
+4b:6e90 Gfx_04b_6e90
+4b:6e90 .image:220
+4b:7090 Gfx_04b_7090
+4b:7090 .image:400:w16
+4b:73b0 Pals_04b_73b0
+4b:73b0 .data:40:8
+4b:73f0 TAmap_04b_73f0
+4b:73f0 .data:2d0:14
+4b:76c0 TAmap_04b_76c0
+4b:76c0 .data:4:1
+4b:76c4 TAmap_04b_76c4
+4b:76c4 .data:4:1
+4b:76c8 TAmap_04b_76c8
+4b:76c8 .data:4:1
+4b:76d0 Gfx_04b_76d0
+4b:76d0 .image:400
+4b:7ad0 Gfx_04b_7ad0
+4b:7ad0 .image:300
+4b:7cd0 Pals_04b_7cd0
+4b:7cd0 .data:40:8
+4b:7d10 TAmap_04b_7d10
+4b:7d10 .data:2d0:14
+
+; Bank 4d (unfinished)
+4d:4000 Gfx_04d_4000
+4d:4000 .image:200
+4d:4110 Gfx_04d_4110
+4d:4110 .image:400
+4d:4510 Gfx_04d_4510
+4d:4510 .image:100
+4d:4610 Gfx_04d_4610
+4d:4610 .image:400
+4d:4a10 Gfx_04d_4a10
+4d:4a10 .image:300
+4d:4c10 Gfx_04d_4c10
+4d:4c10 .image:400
+4d:5010 Gfx_04d_5010
+4d:5010 .image:100
+4d:5110 Gfx_04d_5110
+4d:5110 .image:300
+4d:5510 Pals_04d_5510
+4d:5510 .data:40:8
+4d:5538 Pals_04d_5538
+4d:5538 .data:8
+4d:5540 TAmap_04d_5540
+4d:5540 .data:2d0:14
+4d:5ae0 TAmap_04d_5ae0
+4d:5ae0 .data:8c:e
+4d:5b6c TAmap_04d_5b6c
+4d:5b6c .data:8c:e
+4d:5bf8 TAmap_04d_4bf8
+4d:5bf8 .data:8c:e
+4d:4c84 TAmap_04d_4c84
+4d:4c84 .data:8c:e
+4d:5d10 Sprites_04d_5d10
+4d:5d50 Gfx_04d_5d50
+4d:5d50 .image:20
+4d:5d70 Gfx_04d_5d70
+4d:5d70 .image:400
+4d:6170 Gfx_04d_6170
+4d:6170 .image:400
+4d:6470 Gfx_04d_6470
+4d:6470 .image:400
+4d:6870 Gfx_04d_6870
+4d:6870 .image:400
+4d:6970 Gfx_04d_6970
+4d:6970 .image:400
+4d:6d70 Gfx_04d_6d70
+4d:6d70 .image:400
+4d:7070 Gfx_04d_7070
+4d:7070 .image:400
+4d:7470 Gfx_04d_7470
+4d:7470 .image:400
+4d:7570 Pals_04d_7570
+4d:7570 .data:40:8
+4d:7598 Pals_04d_7498
+4d:7598 .data:8
+4d:75a0 TAmap_04d_75a0
+4d:75a0 .data:2d0:14
+4d:7870 TAmap_04d_7870
+4d:7870 .data:50:14
+4d:78c0 TAmap_04d_78c0
+4d:78c0 .data:50:14
+4d:7910 TAmap_04d_4910
+4d:7910 .data:50:14
+4d:7960 Sprites_04d_7960
+
+; Bank 5d (unfinished)
+5d:7360 Gfx_05e_7360
+5d:7360 .image:400
+5d:7760 Gfx_05e_7760
+5d:7760 .image:400
+5d:7b60 Pals_05e_7b60
+5d:7b60 .data:40:8
+5d:7ba0 TAmap_05d_7ba0
+5d:7ba0 .data:2d0:14
+
+; Bank 5e (unfinished)
+5e:4000 Gfx_05e_4000
+5e:4000 .image:400
+5e:4400 Gfx_05e_4400
+5e:4400 .image:400
+5e:4d00 Pals_05e_4d00
+5e:4d00 .data:40:8
+
+; Bank 5f (unfinished)
+5f:49d0 Gfx_05f_49d0
+5f:49d0 .image:300
+5f:4ce0 Pals_05f_4ce0
+5f:4ce0 .data:18:8
+5f:4d30 Sprites_05f_4d30
 
 ; Bank 63: Adapter not connected screen
 63:402d .ptrtable:10:code
@@ -1242,10 +1384,71 @@
 63:732b .data:4:2
 63:732f Call_063_732f
 
+; Bank 67: ???
+67:486d Data_067_486d
+67:486d .data:4
+67:491c Data_067_491c
+67:491c .ptrtable:8
+67:4940 Call_067_4940
+67:4f68 Data_067_4f68
+67:4f68 .data:6
+67:50a5 Data_067_50a5
+67:50a5 .ptrtable:12
+67:5104 Data_067_5104
+67:5104 .ptrtable:6
+67:5275 Data_067_5275
+67:5275 .data:4
+67:53d6 Data_067_53d6
+67:53d6 .ptrtable:6
+67:546c .ptrtable:6:code
+67:55b8 .ptrtable:6:code
+67:56fa Data_067_56fa
+67:56fa .ptrtable:6
+67:5700 Data_067_5700
+67:5700 .ptrtable:6
+67:5706 Data_067_5706
+67:5706 .ptrtable:6
+67:585a Data_067_585a
+67:585a .data:4
+67:5a9e Jumptable_067_5a9e
+67:5a9e .ptrtable:c:code
+67:5e43 String_067_5e43
+67:5e43 .text:34
+67:5e77 String_067_5e77
+67:5e77 .text:6
+67:5eb4 String_067_5eb4
+67:5eb4 .text:8
+67:5ebc String_067_5ebc
+67:5ebc .text:9
+67:5ec5 String_067_5ec5
+67:5ec5 .text:c
+67:5ed1 Call_067_5ed1
+67:5f0a Jumptable_067_5f0a
+67:5f0a .ptrtable:4:code
+67:5f5e Data_067_5f5e
+67:5f5e .data:8
+67:61d2 String_067_61d2
+67:61d2 .text:33
+67:6246 String_067_6246
+67:6246 .text:8
+67:624e String_067_624e
+67:624e .text:9
+67:6257 String_067_6257
+67:6257 .text:18
+67:632d String_067_632d
+67:632d .text:3c
+67:64ae Jumptable_067_64ae
+67:64ae .ptrtable:6:code
+67:66be Data_067_66be
+67:66be .data:4
+67:67db Call_067_67db
 ; INSERT
 
+; Bank 71 (unfinished)
+71:6f6f TAmap_071_6f6f
+71:6f6f .data:2d0:14
+
 ; Preliminary farcall targets
-1f:4000 Farcall_01f_4000
 22:4000 Farcall_022_4000
 22:4fa9 Farcall_022_4fa9
 22:4ff6 Farcall_022_4ff6
@@ -1725,9 +1928,33 @@
 00:c1d0 w_c1d0__0
 00:c1d1 w_c1d0__1
 ; dw
+00:c220 w_c220
+; ds ??
 00:c264 w_c264
 ; db
+00:c266 w_c266__0
+00:c267 w_c266__1
+00:c268 w_c266__2
+; ds 3
+00:c26d w_c26d
+; db
+00:c26e w_c26e__0
+00:c26f w_c26e__1
+; dw
+00:c271 w_c271
+; ds ??
 00:c272 w_c272
+; db
+00:c273 w_c273
+; db
+00:c274 w_c274
+; db
+00:c275 w_c275__0
+00:c276 w_c275__1
+; dw
+00:c278 w_c278
+; db
+00:c27a w_c27a
 ; db
 00:c27c w_c27c
 ; db
@@ -1738,12 +1965,32 @@
 ; dw
 00:c280 w_c280
 ; db
+00:c283 w_c283
+; db
+00:c286 w_c286
+; db
+00:c28d w_c28d
+; db
+00:c28e w_c28e
+; dw
+00:c28f w_c28f
+; ds ??
+00:c2ad w_c2ad
+; db
 00:c2bf w_c2bf
 ; db
 00:c2c0 w_c2c0
 ; db
 00:c2c3 w_c2c3
 ; db
+00:c2ca w_c2ca
+; db
+00:c2d1 w_c2d1
+; db
+00:c2d2 w_c2d2
+; dw
+00:c2d4 w_c2d4
+; ds 4
 00:c2d5 w_c2d5__0
 00:c2d6 w_c2d5__1
 ; dw
@@ -1799,8 +2046,21 @@
 00:ffb4 h_ffb4__0
 00:ffb5 h_ffb4__1
 ; dw
-00:ffbb h_ffbb
-; db
+00:ffba h_ffba__0
+00:ffbb h_ffba__1
+00:ffbc h_ffba__2
+00:ffbd h_ffba__3
+00:ffbe h_ffba__4
+00:ffbf h_ffba__5
+00:ffc0 h_ffba__6
+00:ffc1 h_ffba__7
+00:ffc2 h_ffba__8
+00:ffc3 h_ffba__9
+00:ffc4 h_ffba__10
+00:ffc5 h_ffba__11
+00:ffc6 h_ffba__12
+00:ffc7 h_ffba__13
+; ds 14
 00:fff0 h_fff0__0
 00:fff1 h_fff0__1
 ; dw
