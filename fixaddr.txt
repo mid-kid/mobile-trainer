@@ -1,4 +1,5 @@
 audio_data_table(04:5515) pointers
+di_html_pointers(3f:4014) pointers
 00:20a0-00:20ee point to bank 4
 data tables referenced by (00:0a82) contain pointers
 
