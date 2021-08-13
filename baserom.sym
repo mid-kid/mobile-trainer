@@ -1477,6 +1477,28 @@
 67:6842 Farcall_@
 ; INSERT
 
+; Bank 68 (unfinished)
+68:67ae adapter_service_numbers
+68:67ae .ptrtable:8:data
+68:67b6 adapter_service_number_1
+68:67b6 .text:6
+68:67bc adapter_service_number_2
+68:67bc .text:6
+68:67c2 adapter_service_number_3
+68:67c2 .text:b
+68:67cd adapter_service_number_4
+68:67cd .text:b
+68:67d8 adapter_config_templates
+68:67d8 .ptrtable:8:data
+68:67e0 adapter_config_template_1
+68:67e0 .data:c0
+68:68a0 adapter_config_template_2
+68:68a0 .data:c0
+68:6960 adapter_config_template_3
+68:6960 .data:c0
+68:6a20 adapter_config_template_4
+68:6a20 .data:c0
+
 ; Bank 71 (unfinished)
 71:6f6f TAmap_@
 71:6f6f .data:2d0:14
