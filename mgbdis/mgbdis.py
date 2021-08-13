@@ -3,8 +3,8 @@
 """Disassemble a Game Boy ROM into RGBDS compatible assembly code"""
 
 __author__ = 'Matt Currie and contributors'
-__credits__ = ['mattcurrie', 'kemenaran', 'bnzis']
-__version__ = '1.4'
+__credits__ = ['mattcurrie', 'kemenaran', 'bnzis', 'ISSOtm']
+__version__ = '1.5'
 __copyright__ = 'Copyright 2018 by Matt Currie'
 __license__ = 'MIT'
 
@@ -139,8 +139,12 @@ ldh_a8_formatters = {
     'ldh_ffa8': lambda value: '[{0}]'.format(hex_word(0xff00 + value)),
 }
 
+
+def warn(*args, **kwargs):
+    print("WARNING: ", *args, **kwargs)
+
 def abort(message):
-    print(message)
+    print("FATAL: ", message)
     os._exit(1)
 
 
@@ -190,12 +194,14 @@ def apply_style_to_instructions(style, instructions):
 
 class Bank:
 
-    def __init__(self, number, symbols, style):
+    def __init__(self, number, symbols, style, bank0, size):
         self.style = style
         self.bank_number = number
         self.blocks = dict()
         self.disassembled_addresses = set()
         self.symbols = symbols
+        self.size = size
+        self.bank0 = bank0
 
         if number == 0:
             self.memory_base_address = 0
@@ -233,7 +239,7 @@ class Bank:
 
 
     def resolve_blocks(self):
-        blocks = self.symbols.get_blocks(self.bank_number)
+        blocks = self.symbols.get_blocks(self.bank_number, self.size)
         block_start_addresses = sorted(blocks.keys())
         resolved_blocks = dict()
 
@@ -258,11 +264,11 @@ class Bank:
                 'arguments': block['arguments'],
             }
 
-            if next_start_address is None and (end_address != self.memory_base_address + 0x4000):
+            if next_start_address is None and (end_address != self.memory_base_address + self.size):
                 # no more blocks and didn't finish at the end of the block, so finish up with a code block
                 resolved_blocks[end_address] = {
                     'type': 'code',
-                    'length': (self.memory_base_address + 0x4000) - end_address,
+                    'length': (self.memory_base_address + self.size) - end_address,
                     'arguments': None
                 }
 
@@ -276,28 +282,33 @@ class Bank:
 
         self.blocks = resolved_blocks
 
+    def get_label(self, address):
+        if self.bank_number != 0 and address < 0x4000:
+            return self.bank0.symbols.get_label(0, address)
+        return self.symbols.get_label(self.bank_number, address)
+
     def get_label_for_instruction_operand(self, value):
         # an operand value lower than $100 is more probably an actual value than an address:
         # don't lookup symbols for it
         if value <= 0x100:
             return None
 
-        return self.symbols.get_label(self.bank_number, value)
+        return self.get_label(value)
 
     def get_label_for_jump_target(self, instruction_name, address):
         if self.bank_number == 0:
             if address not in self.disassembled_addresses:
                 return None
         else:
-            # TODO: if target address is in bank 0 then should check if that address
-            # has been disassembled in bank 0. requires access to bank 0 from
-            # other bank objects
-
             is_in_switchable_bank = 0x4000 <= address < 0x8000
-            if is_in_switchable_bank and address not in self.disassembled_addresses:
+            # if target address is in bank 0 then check if that address has been
+            # disassembled in bank 0
+            if not is_in_switchable_bank:
+                return self.bank0.get_label_for_jump_target(instruction_name, address)
+            if address not in self.disassembled_addresses:
                 return None
 
-        label = self.symbols.get_label(self.bank_number, address)
+        label = self.get_label(address)
         if label is not None:
             # if the address has a specific label then just use that
             return label
@@ -311,7 +322,7 @@ class Bank:
     def get_labels_for_non_code_address(self, address):
         labels = list()
 
-        label = self.symbols.get_label(self.bank_number, address)
+        label = self.get_label(address)
         if label is not None:
             is_local = label.startswith('.')
             if is_local:
@@ -325,7 +336,7 @@ class Bank:
     def get_labels_for_address(self, address):
         labels = list()
 
-        label = self.symbols.get_label(self.bank_number, address)
+        label = self.get_label(address)
         if label is not None:
             # if the address has a specific label then just use that
             is_local = label.startswith('.')
@@ -570,24 +581,27 @@ class Bank:
                 value = to_signed(rom.data[pc + 1])
 
                 # calculate the absolute address for the jump
-                value = pc + 2 + value
+                rom_address = pc + 2 + value
 
-                relative_value = value - pc
+                relative_value = rom_address - pc
                 if relative_value >= 0:
                     operand_values.append('@+' + hex_byte(relative_value))
                 else:
                     operand_values.append('@-' + hex_byte(relative_value * -1))
 
-                target_bank = value // 0x4000
-
                 # convert to banked value so it can be used as a label
-                value = rom_address_to_mem_address(value)
+                value = rom_address_to_mem_address(rom_address)
 
-                if self.bank_number != target_bank:
+                # is the jump target is in this bank?
+                if (rom_address >= self.rom_base_address + self.memory_base_address and 
+                    rom_address < self.rom_base_address + self.memory_base_address + self.size):
+                    # yep!
+                    pass
+                else:
                     # don't use labels for relative jumps across banks
                     value = None
 
-                if target_bank < self.bank_number:
+                if rom_address < self.rom_base_address + self.memory_base_address:
                     # output as data, otherwise RGBDS will complain
                     instruction_name = self.style['db']
                     operand_values = [hex_byte(opcode), hex_byte(rom.data[pc + 1])]
@@ -618,11 +632,13 @@ class Bank:
                 mem_address = rom_address_to_mem_address(value)
 
                 if self.first_pass:
-                    # dont allow switched banks to create labels in bank 0
-                    is_address_in_current_bank = (mem_address < 0x4000 and self.bank_number == 0) or (mem_address >= 0x4000 and self.bank_number > 0)
-                    if is_address_in_current_bank:
-                        # add the label
+                    # add the label
+                    if mem_address >= self.memory_base_address and mem_address < self.memory_base_address + self.size:
+                        # label in cur bank
                         self.add_target_address(instruction_name, mem_address)
+                    elif mem_address < 0x4000 and self.bank0:
+                        # label in fixed bank
+                        self.bank0.add_target_address(instruction_name, mem_address)
                 else:
                     # fetch the label name
                     label = self.get_label_for_jump_target(instruction_name, mem_address)
@@ -799,9 +815,10 @@ class Bank:
 
 
 class Symbols:
-    def __init__(self):
+    def __init__(self, bank_size):
         self.symbols = dict()
         self.blocks = dict()
+        self.bank_size = bank_size
 
     def load_sym_file(self, symbols_path):
         f = open(symbols_path, 'r')
@@ -868,7 +885,7 @@ class Symbols:
         memory_base_address = 0x0000 if bank == 0 else 0x4000
 
         if address >= memory_base_address:
-            blocks = self.get_blocks(bank)
+            blocks = self.get_blocks(bank, self.bank_size)
             blocks[address] = {
                 'type': block_type,
                 'length': length,
@@ -879,7 +896,7 @@ class Symbols:
         if bank not in self.symbols:
             self.symbols[bank] = dict()
 
-        is_symbol_banked = 0x4000 <= address < 0x8000
+        is_symbol_banked = self.bank_size <= address < 0x8000
         if is_symbol_banked:
             self.symbols[bank][address] = label
         else:
@@ -887,7 +904,7 @@ class Symbols:
 
     def get_label(self, bank, address):
         # attempt to find a banked symbol
-        is_symbol_banked = 0x4000 <= address < 0x8000
+        is_symbol_banked = self.bank_size <= address < 0x8000
         if is_symbol_banked and bank in self.symbols and address in self.symbols[bank]:
             return self.symbols[bank][address]
 
@@ -897,25 +914,26 @@ class Symbols:
 
         return None
 
-    def get_blocks(self, bank):
+    def get_blocks(self, bank, size):
         memory_base_address = 0x0000 if bank == 0 else 0x4000
 
         if bank not in self.blocks:
             self.blocks[bank] = dict()
             # each bank defaults to having a single code block
-            self.add_block(bank, memory_base_address, 'code', 0x4000)
+            self.add_block(bank, memory_base_address, 'code', self.bank_size)
 
         return self.blocks[bank]
 
 class ROM:
 
-    def __init__(self, rom_path, style):
+    def __init__(self, rom_path, style, tiny):
         self.style = style
         self.script_dir = os.path.dirname(os.path.realpath(__file__))
         self.rom_path = rom_path
-        self.load()
+        self.load(tiny)
         self.split_instructions()
         self.has_ld_long = False
+        self.tiny = tiny
 
         self.image_output_directory = 'gfx'
         self.image_dependencies = []
@@ -928,16 +946,30 @@ class ROM:
         # when processing last few instructions in the rom
         self.data += b'\x00\x00'
 
-        self.banks = dict()
-        for bank in range(0, self.num_banks):
-            self.banks[bank] = Bank(bank, self.symbols, style)
+        size = self.rom_size
+        if tiny:
+            self.banks = [Bank(0, self.symbols, style, None, min(size, 0x8000))]
+        else:
+            self.banks = [Bank(0, self.symbols, style, None, min(size, 0x4000))]
+            for bank in range(1, self.num_banks):
+                size -= 0x4000
+                self.banks.append(Bank(bank, self.symbols, style, self.banks[0], min(size, 0x4000)))
 
-    def load(self):
+    def load(self, tiny):
         if os.path.isfile(self.rom_path):
             print('Loading "{}"...'.format(self.rom_path))
             self.data = open(self.rom_path, 'rb').read()
             self.rom_size = len(self.data)
+            if self.rom_size < 0x150:
+                abort("ROM is too small, doesn't even contain a header!")
             self.num_banks = self.rom_size // 0x4000
+            if self.rom_size % 0x4000 != 0:
+                warn(f"ROM size (${self.rom_size:04x}) is not a multiple of $4000!")
+                self.num_banks += 1 # Count that incomplete bank
+            if tiny:
+                if self.num_banks > 2:
+                    abort(f"ROM is ${self.rom_size:04x} bytes large, tiny ROMs can only be $8000 at most")
+                self.num_banks = 1
         else:
             abort('"{}" not found'.format(self.rom_path))
 
@@ -967,7 +999,7 @@ class ROM:
 
 
     def load_symbols(self):
-        symbols = Symbols()
+        symbols = Symbols(0x8000 if self.tiny else 0x4000)
 
         for symbol_def in default_symbols:
             symbols.add_symbol_definition(symbol_def)
@@ -1235,7 +1267,10 @@ ENDM
         f.write('\trgbasm {} -o game.o game.asm\n\n'.format(' '.join(parameters)))
 
         f.write('game.{}: game.o\n'.format(rom_extension))
-        f.write('\trgblink -n game.sym -m game.map -o $@ $<\n')
+        if self.tiny:
+            f.write('\trgblink --tiny -n game.sym -m game.map -o $@ $<\n')
+        else:
+            f.write('\trgblink -n game.sym -m game.map -o $@ $<\n')
         f.write('\trgbfix -v -p 255 $@\n\n')
         f.write('\tmd5 $@\n\n')
 
@@ -1264,6 +1299,7 @@ parser.add_argument('--disable-halt-nops', help='Disable RGBDS\'s automatic inse
 parser.add_argument('--disable-auto-ldh', help='Disable RGBDS\'s automatic optimisation of \'ld [$ff00+a8], a\' to \'ldh [a8], a\' instructions. Requires RGBDS >= v0.3.7', action='store_true')
 parser.add_argument('--overwrite', help='Allow generating a disassembly into an already existing directory', action='store_true')
 parser.add_argument('--debug', help='Display debug output', action='store_true')
+parser.add_argument('--tiny', help='Emulate RGBLINK `-t` option (non-banked / "32k" ROMs)', action='store_true')
 parser.add_argument('--bank', help='Disassemble only one bank', type=lambda x: int(x, 16), default=None)
 args = parser.parse_args()
 
@@ -1283,5 +1319,5 @@ style = {
 }
 instructions = apply_style_to_instructions(style, instructions)
 
-rom = ROM(args.rom_path, style)
+rom = ROM(args.rom_path, style, args.tiny)
 rom.disassemble(args.output_dir, args.bank)
