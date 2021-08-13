@@ -720,7 +720,8 @@ class Bank:
         values = list()
         text = ''
 
-        for address in range(start_address, end_address):
+        address = start_address
+        while address < end_address:
             mem_address = rom_address_to_mem_address(address)
 
             labels = self.get_labels_for_non_code_address(mem_address)
@@ -736,14 +737,29 @@ class Bank:
 
                 self.append_labels_to_output(labels)
 
-            byte = rom.data[address]
-            if byte >= 0x20 and byte < 0x7F:
-                text += chr(byte)
+            dec = None
+            if rom.data[address] >= 0x20:
+                try:
+                    dec = rom.data[address:address+1].decode("sjis")
+                    address += 1
+                except:
+                    pass
+
+                if not dec and address + 2 < end_address and rom.data[address+1] >= 0x20:
+                    try:
+                        dec = rom.data[address:address+2].decode("sjis")
+                        address += 2
+                    except:
+                        pass
+
+            if dec:
+                text += dec
             else:
                 if len(text):
                     values.append('"{}"'.format(text))
                     text = ''
-                values.append(hex_byte(byte))
+                values.append(hex_byte(rom.data[address]))
+                address += 1
 
         if len(text):
             values.append('"{}"'.format(text))
