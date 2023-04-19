@@ -776,6 +776,16 @@ class Bank:
         if not self.first_pass and debug:
             print('Outputting ptrtable in range: {} - {}'.format(hex_word(start_address), hex_word(end_address)))
 
+        arg_type = None
+        arg_bank = self.bank_number
+
+        if arguments:
+            args = arguments.split(",")
+            if len(args) > 0:
+                arg_type = args[0]
+            if len(args) > 1:
+                arg_bank = int(args[1], 16)
+
         values = []
 
         for address in range(start_address, end_address, 2):
@@ -788,26 +798,23 @@ class Bank:
                 self.append_output(self.format_data((hex_byte(rom.data[address]),)))
                 break
 
+            instruction_name = None
+            if arg_type and arg_type in ['code', 'data']:
+                instruction_name = {'code': 'call', 'data': 'data'}[arg_type]
+
             value = rom.data[address+1] << 8 | rom.data[address]
 
-            instruction_name = None
-            if arguments and arguments in ['code', 'data']:
-                instruction_name = {'code': 'call', 'data': 'data'}[arguments]
-
-            mem_address = rom_address_to_mem_address(value)
             label = None
-            if value < 0x8000 and instruction_name:
+            if instruction_name:
                 if self.first_pass:
-                    # dont allow switched banks to create labels in bank 0
-                    is_address_in_current_bank = (mem_address < 0x4000 and self.bank_number == 0) or (mem_address >= 0x4000 and self.bank_number > 0)
-                    if is_address_in_current_bank:
-                        # add the label
-                        self.add_target_address(instruction_name, mem_address)
+                    # only add label if it's in the current bank
+                    if arg_bank == self.bank_number and mem_address >= self.memory_base_address and mem_address < self.memory_base_address + self.size:
+                        self.add_target_address(instruction_name, value)
                 else:
                     # fetch the label name
-                    label = self.symbols.get_label(self.bank_number, mem_address)
-                    if label is None and mem_address in self.target_addresses[instruction_name]:
-                        label = self.format_label(instruction_name, mem_address)
+                    label = self.symbols.get_label(arg_bank, value)
+                    if label is None and value in self.target_addresses[instruction_name]:
+                        label = self.format_label(instruction_name, value)
 
             if not self.first_pass:
                 if label:
