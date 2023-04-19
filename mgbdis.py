@@ -472,7 +472,7 @@ class Bank:
                 farcall = True
 
         if farcall:
-            operands = list()
+            operands = []
 
             addr = rom.data[pc + 3] | (rom.data[pc + 4] << 8)
             bank = None
@@ -776,7 +776,7 @@ class Bank:
         if not self.first_pass and debug:
             print('Outputting ptrtable in range: {} - {}'.format(hex_word(start_address), hex_word(end_address)))
 
-        values = list()
+        values = []
 
         for address in range(start_address, end_address, 2):
             mem_address = rom_address_to_mem_address(address)
