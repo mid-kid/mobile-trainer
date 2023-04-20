@@ -2,6 +2,6 @@
 
 bank="$1"
 addr="$2"
-prefix="${3:-Data}_"
+prefix="${3:-Data}"
 
-sed -i -e 's/^; INSERT$/'"$1:$2 ${prefix}0${bank}_$addr"'\n; INSERT/' baserom.sym
+sed -i -e 's/^; INSERT$/'"$1:$2 ${prefix}_@"'\n; INSERT/' baserom.sym
