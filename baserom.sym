@@ -3722,7 +3722,6 @@
 70:7450 .data:a0:14
 70:74f0 Map_@
 70:74f0 .data:a0:14
-; INSERT
 
 ; Bank 71 (unfinished)
 71:4000 Gfx_@
@@ -3742,6 +3741,21 @@
 71:4f68 Map_@
 71:4f68 .data:50:14
 71:4fb8 Sprites_@
+71:4fb8 .ptrtable:8:data
+71:4fc0 SpriteFrameset_071_4fc0
+71:4fc0 .ptrtable:6:data
+71:4fc6 SpriteFrame_071_4fc6
+71:4fc6 .data:1
+71:4fc7 .data:20:4
+71:4fe7 SpriteFrame_071_4fe7
+71:4fe7 .data:1
+71:4fe8 .data:24:4
+71:500c SpriteFrame_071_500c
+71:500c .data:1
+71:500d .data:24:4
+71:5031 SpriteAnim_071_5031
+71:5031 .data:1
+71:5032 .data:6:2
 71:5038 Map_@
 71:5038 .data:60:c
 71:5098 Map_@
@@ -3758,6 +3772,7 @@
 71:5278 .data:60:c
 71:52d8 Map_@
 71:52d8 .data:60:c
+71:5338 .data:8
 71:5340 Gfx_@
 71:5340 .image:400
 71:5740 Gfx_@
@@ -3783,8 +3798,21 @@
 71:6c68 Map_@
 71:6c68 .data:2d0:14
 71:6f38 Sprites_@
+71:6f38 .ptrtable:8:data
+71:6f40 SpriteFrameset_071_6f40
+71:6f40 .ptrtable:4:data
+71:6f44 SpriteFrame_071_6f44
+71:6f44 .data:1
+71:6f45 .data:24:4
+71:6f69 SpriteFrame_071_6f69
+71:6f69 .data:1
+71:6f6a .data:0:4
+71:6f6a SpriteAnim_071_6f6a
+71:6f6a .data:1
+71:6f6b .data:4:2
 71:6f6f Map_@
 71:6f6f .data:2d0:14
+; INSERT
 
 ; Bank 72 (unfinished)
 72:48c0 Gfx_@
