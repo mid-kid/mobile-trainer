@@ -497,6 +497,164 @@ class Bank:
                     # use the label instead of the address
                     operand_values = (label,)
 
+        if (rom.data[pc + 0] == 0x85 and
+            rom.data[pc + 1] == 0x6f and
+            rom.data[pc + 2] == 0x7c and
+            rom.data[pc + 3] == 0xce and
+            rom.data[pc + 4] == 0x00 and
+            rom.data[pc + 5] == 0x67):
+            instruction_name = "add_hl_a"
+            length = 6
+            operands = []
+
+        if (rom.data[pc + 0] == 0xc6 and  # add a, n8
+            rom.data[pc + 2] == 0x6f and  # ld l, a
+            rom.data[pc + 3] == 0x3e and  # ld a, n8
+            rom.data[pc + 5] == 0xce and  # adc a, 0
+            rom.data[pc + 6] == 0x00 and
+            rom.data[pc + 7] == 0x67):    # ld h, a
+            instruction_name = "add_hl_a_n16"
+            length = 8
+            operands = []
+            value = rom.data[pc + 1] | rom.data[pc + 4] << 8
+            label = self.get_label_for_instruction_operand(value)
+            if label:
+                operand_values = (label,)
+            else:
+                operand_values = (hex_word(value),)
+
+        if (rom.data[pc +  0] == 0x11 and  # ld de, n16
+            rom.data[pc +  3] == 0x21 and  # ld hl, n16
+            rom.data[pc +  6] == 0x3e and  # ld a, n8
+            rom.data[pc +  8] == 0x06 and  # ld b, n8
+            rom.data[pc + 10] == 0x0e and  # ld c, n8
+            rom.data[pc + 12] == 0xcd and  # farcall 00:0787
+            rom.data[pc + 13] == 0xd1 and
+            rom.data[pc + 14] == 0x06 and
+            rom.data[pc + 15] == 0x87 and
+            rom.data[pc + 16] == 0x07 and
+            rom.data[pc + 17] == 0x00):
+            instruction_name = "m_gfx_load"
+            length = 18
+            operands = []
+            reg_de = rom.data[pc + 1] | rom.data[pc + 2] << 8
+            reg_hl = rom.data[pc + 4] | rom.data[pc + 5] << 8
+            reg_a = rom.data[pc + 7]
+            reg_b = rom.data[pc + 9]
+            reg_c = rom.data[pc + 11]
+
+            operand_values = []
+            operand_values.append(hex_word(reg_de))
+
+            bank = reg_a
+            addr = reg_hl
+            label = self.symbols.get_label(bank, addr)
+            if label is not None:
+                operand_values.append(label)
+            else:
+                operand_values.append(hex_byte(bank))
+                operand_values.append(hex_word(addr))
+
+            operand_values.append(hex_byte(reg_b))
+            operand_values.append(hex_byte(reg_c))
+
+        if (rom.data[pc +  0] == 0x01 and  # ld bc, n16
+            rom.data[pc +  3] == 0x11 and  # ld de, n16
+            rom.data[pc +  6] == 0x21 and  # ld hl, n16
+            rom.data[pc +  9] == 0x3e and  # ld a, n8
+            rom.data[pc + 11] == 0xcd and  # farcall 4f:4000
+            rom.data[pc + 12] == 0xd1 and
+            rom.data[pc + 13] == 0x06 and
+            rom.data[pc + 14] == 0x00 and
+            rom.data[pc + 15] == 0x40 and
+            rom.data[pc + 16] == 0x4f):
+            instruction_name = "m_pal_load"
+            length = 17
+            operands = []
+            reg_bc = rom.data[pc + 1] | rom.data[pc + 2] << 8
+            reg_de = rom.data[pc + 4] | rom.data[pc + 5] << 8
+            reg_hl = rom.data[pc + 7] | rom.data[pc + 8] << 8
+            reg_a = rom.data[pc + 10]
+
+            operand_values = []
+            operand_values.append(hex_word(reg_de))
+
+            bank = reg_a
+            addr = reg_hl
+            label = self.symbols.get_label(bank, addr)
+            if label is not None:
+                operand_values.append(label)
+            else:
+                operand_values.append(hex_byte(bank))
+                operand_values.append(hex_word(addr))
+
+            operand_values.append(hex_word(reg_bc))
+
+        if (rom.data[pc +  0] == 0x01 and  # ld bc, n16
+            rom.data[pc +  3] == 0x11 and  # ld de, n16
+            rom.data[pc +  6] == 0x21 and  # ld hl, n16
+            rom.data[pc +  9] == 0x3e and  # ld a, n8
+            rom.data[pc + 11] == 0xcd and  # farcall 00:08ea
+            rom.data[pc + 12] == 0xd1 and
+            rom.data[pc + 13] == 0x06 and
+            rom.data[pc + 14] == 0xea and
+            rom.data[pc + 15] == 0x08 and
+            rom.data[pc + 16] == 0x00):
+            instruction_name = "m_map_load"
+            length = 17
+            operands = []
+            reg_bc = rom.data[pc + 1] | rom.data[pc + 2] << 8
+            reg_de = rom.data[pc + 4] | rom.data[pc + 5] << 8
+            reg_hl = rom.data[pc + 7] | rom.data[pc + 8] << 8
+            reg_a = rom.data[pc + 10]
+
+            operand_values = []
+            operand_values.append(hex_word(reg_de))
+
+            bank = reg_a
+            addr = reg_hl
+            label = self.symbols.get_label(bank, addr)
+            if label is not None:
+                operand_values.append(label)
+            else:
+                operand_values.append(hex_byte(bank))
+                operand_values.append(hex_word(addr))
+
+            operand_values.append(hex_byte((reg_bc >> 8) & 0xff))
+            operand_values.append(hex_byte((reg_bc >> 0) & 0xff))
+
+        if (rom.data[pc +  0] == 0x21 and  # ld hl, n16
+            rom.data[pc +  3] == 0x11 and  # ld de, n16
+            rom.data[pc +  6] == 0x3e and  # ld a, n8
+            rom.data[pc +  8] == 0x06 and  # ld b, n8
+            rom.data[pc + 10] == 0xcd and  # farcall 00:0a82
+            rom.data[pc + 11] == 0xd1 and
+            rom.data[pc + 12] == 0x06 and
+            rom.data[pc + 13] == 0x82 and
+            rom.data[pc + 14] == 0x0a and
+            rom.data[pc + 15] == 0x00):
+            instruction_name = "m_obj_load"
+            length = 16
+            operands = []
+            reg_hl = rom.data[pc + 1] | rom.data[pc + 2] << 8
+            reg_de = rom.data[pc + 4] | rom.data[pc + 5] << 8
+            reg_a = rom.data[pc + 7]
+            reg_b = rom.data[pc + 9]
+
+            operand_values = []
+            operand_values.append(hex_word(reg_hl))
+
+            bank = reg_a
+            addr = reg_de
+            label = self.symbols.get_label(bank, addr)
+            if label is not None:
+                operand_values.append(label)
+            else:
+                operand_values.append(hex_byte(bank))
+                operand_values.append(hex_word(addr))
+
+            operand_values.append(hex_byte(reg_b))
+
         if instruction_name == 'stop' or (instruction_name == 'halt' and not self.style['disable_halt_nops']):
             if rom.data[pc + 1] == 0x00:
                 # rgbds adds a nop instruction after a stop/halt, so if that instruction
