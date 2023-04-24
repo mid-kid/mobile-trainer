@@ -1193,6 +1193,8 @@
 22:53e0 .data:2d0:14
 22:56b0 Map_@
 22:56b0 .data:2d0:14
+22:5980 Map_@
+22:5980 .data:2d0:14
 22:5980 .data:4000
 22:5c50 Pal_@
 22:5c50 .data:40:8
@@ -1206,6 +1208,8 @@
 23:73e0 .image:100
 23:74e0 Gfx_@
 23:74e0 .image:160:w16
+23:7640 Map_@
+23:7640 .data:2d0:14
 23:7910 Pal_@
 23:7910 .data:40:8
 23:7950 Pal_@
@@ -1229,6 +1233,10 @@
 24:42d1 .text:16
 24:42e7 String_@
 24:42e7 .text:9
+24:5900 Map_@
+24:5900 .data:2d0:14
+24:5bd0 Map_@
+24:5bd0 .data:2d0:14
 24:5ea0 Pal_@
 24:5ea0 .data:40:8
 24:64e0 Pal_@
@@ -1250,6 +1258,8 @@
 24:73f0 .image:a0
 24:7490 Gfx_@
 24:7490 .image:300
+24:7790 Map_@
+24:7790 .data:2d0:14
 24:7a60 Pal_@
 24:7a60 .data:40:8
 24:7aa0 Pal_@
@@ -1272,6 +1282,10 @@
 24:7bf0 Sprites_@
 
 ; Bank 25 (unfinished)
+25:6410 Map_@
+25:6410 .data:2d0:14
+25:66e0 Map_@
+25:66e0 .data:2d0:14
 25:69b0 Pal_@
 25:69b0 .data:40:8
 25:6ef0 Pal_@
@@ -1280,6 +1294,12 @@
 25:6f30 .image:400
 25:7330 Gfx_@
 25:7330 .image:400
+25:7730 Map_@
+25:7730 .data:2d0:14
+25:7a00 Map_@
+25:7a00 .data:2d0:14
+25:7cd0 Map_@
+25:7cd0 .data:2d0:14
 
 ; Bank 26 (unfinished)
 26:59e0 Gfx_@
@@ -1336,10 +1356,24 @@
 27:6860 .image:400
 27:6c60 Gfx_@
 27:6c60 .image:400
+27:7060 Map_@
+27:7060 .data:480:20
 27:74e0 Pal_@
 27:74e0 .data:40:8
 27:7520 Pal_@
 27:7520 .data:40:8
+27:7560 Map_@
+27:7560 .data:c8:14
+27:7628 Map_@
+27:7628 .data:c8:14
+27:76f0 Map_@
+27:76f0 .data:c8:14
+27:77b8 Map_@
+27:77b8 .data:c8:14
+27:7880 Map_@
+27:7880 .data:c8:14
+27:7948 Map_@
+27:7948 .data:c8:14
 27:7a10 Sprites_@
 27:7a20 Sprites_@
 27:7a30 Sprites_@
@@ -1358,6 +1392,10 @@
 28:42c0 .image:210
 28:44d0 Gfx_@
 28:44d0 .image:80
+28:4550 Map_@
+28:4550 .data:2d0:14
+28:4820 Map_@
+28:4820 .data:2d0:14
 28:4af0 Pal_@
 28:4af0 .data:40:8
 28:4b30 Pal_@
@@ -1394,6 +1432,10 @@
 28:6550 .image:290
 28:67e0 Gfx_@
 28:67e0 .image:80
+28:6860 Map_@
+28:6860 .data:2d0:14
+28:6b30 Map_@
+28:6b30 .data:2d0:14
 28:6e00 Pal_@
 28:6e00 .data:40:8
 28:6e40 Pal_@
@@ -1455,6 +1497,8 @@
 29:5060 .image:30
 29:5400 Gfx_@
 29:5400 .image:400
+29:5800 Map_@
+29:5800 .data:2d0:14
 29:5ad0 Pal_@
 29:5ad0 .data:40:8
 29:5e10 Pal_@
@@ -1473,8 +1517,12 @@
 29:63c0 Sprites_@
 
 ; Bank 2a (unfinished)
+2a:4cd0 Map_@
+2a:4cd0 .data:2d0:14
 2a:4fa0 Pal_@
 2a:4fa0 .data:40:8
+2a:6b40 Map_@
+2a:6b40 .data:2d0:14
 2a:6e10 Pal_@
 2a:6e10 .data:40:8
 2a:6e70 Sprites_@
@@ -1485,6 +1533,8 @@
 2a:75e0 .image:400
 2a:79e0 Gfx_@
 2a:79e0 .image:40
+2a:7a20 Map_@
+2a:7a20 .data:2d0:14
 2a:7cf0 Gfx_@
 2a:7cf0 .image:e0
 2a:7dd0 Gfx_@
@@ -1493,6 +1543,8 @@
 ; Bank 2b (unfinished)
 2b:4880 Gfx_@
 2b:4880 .image:2d0
+2b:4b50 Map_@
+2b:4b50 .data:2d0:14
 2b:4e20 Pal_@
 2b:4e20 .data:40:8
 2b:4e60 Gfx_@
@@ -1510,6 +1562,8 @@
 2b:59c0 .image:400
 2b:5dc0 Gfx_@
 2b:5dc0 .image:230
+2b:5ff0 Map_@
+2b:5ff0 .data:2d0:14
 2b:62c0 Pal_@
 2b:62c0 .data:40:8
 2b:6300 Gfx_@
@@ -1517,6 +1571,8 @@
 2b:63f0 Pal_@
 2b:63f0 .data:40:8
 2b:6430 Sprites_@
+2b:73d0 Map_@
+2b:73d0 .data:2d0:14
 2b:76a0 Pal_@
 2b:76a0 .data:40:8
 2b:7860 Pal_@
@@ -1530,6 +1586,8 @@
 2b:7910 Sprites_@
 
 ; Bank 2c (unfinished)
+2c:4e30 Map_@
+2c:4e30 .data:2d0:14
 2c:5100 Pal_@
 2c:5100 .data:40:8
 2c:5670 Pal_@
@@ -1540,6 +1598,8 @@
 2c:6b30 .image:100
 2c:6c30 Gfx_@
 2c:6c30 .image:90
+2c:6cc0 Map_@
+2c:6cc0 .data:2d0:14
 2c:6f90 Pal_@
 2c:6f90 .data:40:8
 2c:71d0 Pal_@
@@ -1550,6 +1610,8 @@
 2c:7250 Sprites_@
 2c:7740 Gfx_@
 2c:7740 .image:120:w16
+2c:7860 Map_@
+2c:7860 .data:2d0:14
 2c:7b30 Pal_@
 2c:7b30 .data:40:8
 2c:7b70 Gfx_@
@@ -1557,6 +1619,8 @@
 2c:7c00 Pal_@
 2c:7c00 .data:40:8
 2c:7c40 Sprites_@
+2c:7c80 Map_@
+2c:7c80 .data:2d0:14
 2c:7f50 Pal_@
 2c:7f50 .data:40:8
 2c:7f90 Pal_@
@@ -1636,12 +1700,16 @@
 2d:4686 Call_@
 2d:5ac0 Gfx_@
 2d:5ac0 .image:3c0:w32
+2d:5fc0 Map_@
+2d:5fc0 .data:2d0:14
 2d:6290 Pal_@
 2d:6290 .data:40:8
 2d:62d0 Gfx_@
 2d:62d0 .image:2a0:w16
 2d:6570 Pal_@
 2d:6570 .data:40:8
+2d:7b50 Map_@
+2d:7b50 .data:2d0:14
 2d:7e20 Pal_@
 2d:7e20 .data:30:8
 
@@ -1658,6 +1726,16 @@
 2e:6400 .image:160:w16
 2e:6560 Gfx_@
 2e:6560 .image:400
+2e:6960 Map_@
+2e:6960 .data:2d0:14
+2e:6c30 Map_@
+2e:6c30 .data:f0:14
+2e:6d20 Map_@
+2e:6d20 .data:2d0:14
+2e:6ff0 Map_@
+2e:6ff0 .data:2d0:14
+2e:72c0 Map_@
+2e:72c0 .data:2d0:14
 2e:7590 Pal_@
 2e:7590 .data:40:8
 2e:75d0 Pal_@
@@ -1669,13 +1747,19 @@
 2e:7700 Sprites_@
 
 ; Bank 2f (unfinished)
+2f:4d40 Map_@
+2f:4d40 .data:2d0:14
 2f:5010 Sprites_@
 2f:5020 Sprites_@
 2f:5030 Sprites_@
 2f:5040 Sprites_@
 2f:57b0 Sprites_@
+2f:69f0 Map_@
+2f:69f0 .data:2d0:14
 2f:6cc0 Pal_@
 2f:6cc0 .data:40:8
+2f:7ac0 Map_@
+2f:7ac0 .data:2d0:14
 2f:7d90 Pal_@
 2f:7d90 .data:40:8
 
@@ -2127,6 +2211,8 @@
 4a:72b0 .data:c8:14
 
 ; Bank 4b (unfinished)
+4b:4000 Map_@
+4b:4000 .data:2d0:14
 4b:42d0 Gfx_@
 4b:42d0 .image:400
 4b:46d0 Gfx_@
@@ -2225,6 +2311,8 @@
 4d:5538 .data:8
 4d:5540 Map_@
 4d:5540 .data:2d0:14
+4d:5810 Map_@
+4d:5810 .data:2d0:14
 4d:5ae0 Map_@
 4d:5ae0 .data:8c:e
 4d:5b6c Map_@
@@ -2327,12 +2415,16 @@
 51:42a0 .image:400
 51:46a0 Gfx_@
 51:46a0 .image:400
+51:4aa0 Map_@
+51:4aa0 .data:2d0:14
 51:4d70 Pal_@
 51:4d70 .data:40:8
 51:4db0 Gfx_@
 51:4db0 .image:400
 51:51b0 Gfx_@
 51:51b0 .image:400
+51:55b0 Map_@
+51:55b0 .data:2d0:14
 51:5880 Pal_@
 51:5880 .data:40:8
 51:58c0 Gfx_@
@@ -2381,6 +2473,18 @@
 54:5364 .text:3
 
 ; Bank 56 (unfinished)
+56:418a Map_@
+56:418a .data:2d0:14
+56:445a Map_@
+56:445a .data:2d0:14
+56:472a Map_@
+56:472a .data:2d0:14
+56:49fa Map_@
+56:49fa .data:2d0:14
+56:4cca Map_@
+56:4cca .data:2d0:14
+56:4f9a Map_@
+56:4f9a .data:2d0:14
 56:52c0 Gfx_@
 56:52c0 .image:400
 56:56c0 Gfx_@
@@ -2420,6 +2524,8 @@
 58:4000 .image:1d0
 58:7b50 Pal_@
 58:7b50 .data:28:8
+58:7b78 Map_@
+58:7b78 .data:2d0:14
 
 ; Bank 5b (unfinished)
 5b:4000 Gfx_@
@@ -2454,6 +2560,12 @@
 5b:56a0 .data:8:8
 
 ; Bank 5c (unfinished)
+5c:5516 Map_@
+5c:5516 .data:2d0:14
+5c:57e6 Map_@
+5c:57e6 .data:2d0:14
+5c:5ab6 Map_@
+5c:5ab6 .data:2d0:14
 5c:5d90 Gfx_@
 5c:5d90 .image:20
 5c:5db0 Gfx_@
@@ -2580,6 +2692,8 @@
 5f:4400 .image:400
 5f:4800 Gfx_@
 5f:4800 .image:10
+5f:4810 Map_@
+5f:4810 .data:1b8:14
 5f:49d0 Gfx_@
 5f:49d0 .image:300
 5f:4cd0 Pal_@
@@ -2719,12 +2833,24 @@
 5f:4ec8 SpriteAnim_05f_4ec8
 5f:4ec8 .data:1
 5f:4ec9 .data:2:2
+5f:4ecb Map_@
+5f:4ecb .data:208:14
+5f:50d3 Map_@
+5f:50d3 .data:208:14
+5f:52db Map_@
+5f:52db .data:208:14
+5f:54e3 Map_@
+5f:54e3 .data:208:14
+5f:56eb Map_@
+5f:56eb .data:208:14
 5f:5900 Gfx_@
 5f:5900 .image:400
 5f:5d00 Gfx_@
 5f:5d00 .image:400
 5f:6100 Gfx_@
 5f:6100 .image:100
+5f:69b0 Map_@
+5f:69b0 .data:208:14
 5f:6bb8 Pal_@
 5f:6bb8 .data:8:8
 5f:6bc0 Pal_@
@@ -2978,6 +3104,10 @@
 66:66c0 .image:240:w32
 66:6900 Gfx_@
 66:6900 .image:190
+66:7210 Map_@
+66:7210 .data:1b8:14
+66:73c8 Map_@
+66:73c8 .data:f0:14
 
 ; Bank 67: ???
 67:4000 Farcall_@
@@ -3570,6 +3700,8 @@
 70:6c90 .data:40:8
 70:6cd0 Pal_@
 70:6cd0 .data:40:8
+70:6d10 Map_@
+70:6d10 .data:380:20
 ; INSERT
 
 ; Bank 71 (unfinished)
@@ -3637,15 +3769,21 @@
 ; Bank 72 (unfinished)
 72:48c0 Gfx_@
 72:48c0 .image:400
+72:4cc0 Map_@
+72:4cc0 .data:168:14
 72:4e28 Pal_@
 72:4e28 .data:10:8
 72:4e38 Pal_@
 72:4e38 .data:8:8
 72:4e40 Sprites_@
+72:4e73 Map_@
+72:4e73 .data:1b8:14
 72:6c10 Gfx_@
 72:6c10 .image:400
 72:7010 Gfx_@
 72:7010 .image:100
+72:7110 Map_@
+72:7110 .data:f0:14
 72:7200 Pal_@
 72:7200 .data:10:8
 72:7210 Pal_@
@@ -3654,6 +3792,8 @@
 72:7220 .image:400
 72:7620 Gfx_@
 72:7620 .image:100
+72:7720 Map_@
+72:7720 .data:f0:14
 72:7810 Pal_@
 72:7810 .data:10:8
 72:7820 Pal_@
@@ -3662,6 +3802,8 @@
 72:7858 Sprites_@
 
 ; Bank 73 (unfinished)
+73:4097 Map_@
+73:4097 .data:2d0:14
 73:45e0 Gfx_@
 73:45e0 .image:400
 73:4de0 Gfx_@
@@ -3919,6 +4061,8 @@
 7f:62b0 .image:400
 7f:66b0 Gfx_@
 7f:66b0 .image:120:w16
+7f:67d0 Map_@
+7f:67d0 .data:2d0:14
 7f:6aa0 Pal_@
 7f:6aa0 .data:40:8
 7f:6ae0 Gfx_@
