@@ -4924,12 +4924,14 @@
 7d:7bc1 Farcall_@
 7d:7bf0 Farcall_@
 7d:7c00 Farcall_@
-; INSERT
 
 ; bank 7e (unfinished)
 7e:7c34 Farcall_@
 7e:7d19 Farcall_@
 7e:7d62 Farcall_@
+7e:7d8f Data_@
+7e:7d8f .ptrtable:a:code
+; INSERT
 
 ; Bank 7f (unfinished)
 7f:4007 Farcall_@
