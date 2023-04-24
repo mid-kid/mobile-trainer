@@ -497,13 +497,23 @@ class Bank:
                     # use the label instead of the address
                     operand_values = (label,)
 
-        if (rom.data[pc + 0] == 0x85 and
-            rom.data[pc + 1] == 0x6f and
-            rom.data[pc + 2] == 0x7c and
-            rom.data[pc + 3] == 0xce and
+        if (rom.data[pc + 0] == 0x85 and  # add l
+            rom.data[pc + 1] == 0x6f and  # ld l, a
+            rom.data[pc + 2] == 0x7c and  # ld a, h
+            rom.data[pc + 3] == 0xce and  # adc a, 0
             rom.data[pc + 4] == 0x00 and
-            rom.data[pc + 5] == 0x67):
+            rom.data[pc + 5] == 0x67):    # ld h, a
             instruction_name = "add_hl_a"
+            length = 6
+            operands = []
+
+        if (rom.data[pc + 0] == 0x85 and  # add l
+            rom.data[pc + 1] == 0x6f and  # ld l, a
+            rom.data[pc + 2] == 0x3e and  # ld a, 0
+            rom.data[pc + 3] == 0x00 and
+            rom.data[pc + 4] == 0x8c and  # adc h
+            rom.data[pc + 5] == 0x67):    # ld h, a
+            instruction_name = "add_hl_a_"
             length = 6
             operands = []
 
