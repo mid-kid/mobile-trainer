@@ -1194,6 +1194,19 @@
 22:56b0 .data:2d0:14
 22:5980 .data:4000
 
+; Bank 23 (unfinished)
+23:7990 Sprites_@
+23:79a0 Sprites_@
+23:79b0 Sprites_@
+23:79c0 Sprites_@
+23:79d0 Sprites_@
+23:79e0 Sprites_@
+23:79f0 Sprites_@
+23:7a00 Sprites_@
+23:7a10 Sprites_@
+23:7a20 Sprites_@
+23:7ad0 Sprites_@
+
 ; Bank 24 (unfinished)
 24:4000 Data_@
 24:42b0 Call_@
@@ -1201,8 +1214,67 @@
 24:42d1 .text:16
 24:42e7 String_@
 24:42e7 .text:9
+24:6530 Sprites_@
+24:6540 Sprites_@
+24:6550 Sprites_@
+24:6560 Sprites_@
+24:6570 Sprites_@
+24:6580 Sprites_@
+24:6590 Sprites_@
+24:65a0 Sprites_@
+24:65b0 Sprites_@
+24:7b20 Sprites_@
+24:7b30 Sprites_@
+24:7b40 Sprites_@
+24:7b50 Sprites_@
+24:7b60 Sprites_@
+24:7b70 Sprites_@
+24:7b80 Sprites_@
+24:7b90 Sprites_@
+24:7ba0 Sprites_@
+24:7bb0 Sprites_@
+24:7bc0 Sprites_@
+24:7bd0 Sprites_@
+24:7be0 Sprites_@
+24:7bf0 Sprites_@
+
+; Bank 26 (unfinished)
+26:7b00 Sprites_@
+26:7b10 Sprites_@
+26:7b20 Sprites_@
+26:7b30 Sprites_@
+26:7b40 Sprites_@
+26:7b50 Sprites_@
+26:7b60 Sprites_@
+26:7b70 Sprites_@
+26:7b80 Sprites_@
+26:7b90 Sprites_@
+26:7ba0 Sprites_@
+26:7bb0 Sprites_@
+26:7bc0 Sprites_@
+26:7bd0 Sprites_@
+
+; Bank 27 (unfinished)
+27:7a10 Sprites_@
+27:7a20 Sprites_@
+27:7a30 Sprites_@
+27:7a40 Sprites_@
+27:7a50 Sprites_@
+27:7a60 Sprites_@
+27:7a70 Sprites_@
+27:7aa0 Sprites_@
+27:7ab0 Sprites_@
+27:7ac0 Sprites_@
+27:7ad0 Sprites_@
+27:7ae0 Sprites_@
 
 ; Bank 28 (unfinished)
+28:4b70 Sprites_@
+28:5210 Sprites_@
+28:5220 Sprites_@
+28:5230 Sprites_@
+28:5240 Sprites_@
+28:5250 Sprites_@
 28:54b0 Gfx_@
 28:54b0 .image:400
 28:58b0 Gfx_@
@@ -1217,6 +1289,93 @@
 28:5ee0 .data:40:8
 28:6e80 Sprites_@
 28:6e90 Sprites_@
+28:6f20 Sprites_@
+28:6f30 Sprites_@
+28:6f40 Sprites_@
+28:6f70 Sprites_@
+28:6f80 Sprites_@
+28:6f90 Sprites_@
+28:6fa0 Sprites_@
+28:6fd0 Sprites_@
+28:7020 Sprites_@
+28:7030 Sprites_@
+28:72fb Sprites_@
+28:732b Sprites_@
+28:733b Sprites_@
+28:734b Sprites_@
+28:735b Sprites_@
+28:736b Sprites_@
+28:737b Sprites_@
+28:738b Sprites_@
+28:739b Sprites_@
+28:73ab Sprites_@
+28:73bb Sprites_@
+28:73cb Sprites_@
+28:73db Sprites_@
+28:73eb Sprites_@
+28:73fb Sprites_@
+28:740b Sprites_@
+28:741b Sprites_@
+28:742b Sprites_@
+28:743b Sprites_@
+28:744b Sprites_@
+28:745b Sprites_@
+28:746b Sprites_@
+28:747b Sprites_@
+28:748b Sprites_@
+28:749b Sprites_@
+28:74ab Sprites_@
+28:74bb Sprites_@
+28:74cb Sprites_@
+28:74db Sprites_@
+28:74eb Sprites_@
+28:74fb Sprites_@
+28:750b Sprites_@
+28:751b Sprites_@
+28:752b Sprites_@
+28:753b Sprites_@
+28:754b Sprites_@
+28:755b Sprites_@
+28:756b Sprites_@
+28:757b Sprites_@
+
+; Bank 29 (unfinished)
+29:6350 Sprites_@
+29:6360 Sprites_@
+29:6370 Sprites_@
+29:6380 Sprites_@
+29:6390 Sprites_@
+29:63a0 Sprites_@
+29:63b0 Sprites_@
+29:63c0 Sprites_@
+
+; Bank 2a (unfinished)
+2a:6e70 Sprites_@
+2a:6e80 Sprites_@
+
+; Bank 2b (unfinished)
+2b:51d0 Sprites_@
+2b:51e0 Sprites_@
+2b:51f0 Sprites_@
+2b:5200 Sprites_@
+2b:5210 Sprites_@
+2b:5220 Sprites_@
+2b:5230 Sprites_@
+2b:6430 Sprites_@
+2b:78a0 Sprites_@
+2b:78c0 Sprites_@
+2b:78d0 Sprites_@
+2b:78e0 Sprites_@
+2b:78f0 Sprites_@
+2b:7900 Sprites_@
+2b:7910 Sprites_@
+
+; Bank 2c (unfinished)
+2c:7220 Sprites_@
+2c:7230 Sprites_@
+2c:7240 Sprites_@
+2c:7250 Sprites_@
+2c:7c40 Sprites_@
 
 ; Bank 2d (unfinished)
 2d:42bb String_@
@@ -1290,6 +1449,20 @@
 2d:466d String_@
 2d:466d .text:19
 2d:4686 Call_@
+
+; Bank 2e (unfinished)
+2e:76c0 Sprites_@
+2e:76d0 Sprites_@
+2e:76e0 Sprites_@
+2e:76f0 Sprites_@
+2e:7700 Sprites_@
+
+; Bank 2f (unfinished)
+2f:5010 Sprites_@
+2f:5020 Sprites_@
+2f:5030 Sprites_@
+2f:5040 Sprites_@
+2f:57b0 Sprites_@
 
 ; Bank 3d: Test page htmls 1
 3d:4000 String_@
@@ -1892,6 +2065,10 @@
 4e:4904 String_@
 4e:4904 .text:37
 
+; Bank 50 (unfinished)
+50:6d16 Sprites_@
+50:6d1a Sprites_@
+
 ; Bank 51 (unfinished)
 51:58c0 Gfx_@
 51:58c0 .image:400
@@ -1938,6 +2115,9 @@
 54:5364 string_dec
 54:5364 .text:3
 
+; Bank 56 (unfinished)
+56:79b8 Sprites_@
+
 ; Bank 5b (unfinished)
 5b:4000 Gfx_@
 5b:4000 .image:400
@@ -1969,6 +2149,9 @@
 5b:5698 .data:8:8
 5b:56a0 Pal_@
 5b:56a0 .data:8:8
+
+; Bank 5c (unfinished)
+5c:642b Sprites_@
 
 ; Bank 5d (unfinished)
 5d:4000 Gfx_@
@@ -2074,12 +2257,29 @@
 5f:49d0 .image:300
 5f:4ce0 Pal_@
 5f:4ce0 .data:18:8
+5f:4cf8 Sprites_@
+5f:4cf8 .ptrtable:c:data
+5f:4d04 Sprites_@
+5f:4d04 .ptrtable:14:data
+5f:4d18 Sprites_@
+5f:4d18 .ptrtable:18:data
 5f:4d30 Sprites_@
 5f:4d30 .ptrtable:8:data
 5f:4d38 Sprites_@
 5f:4d38 .ptrtable:8:data
 5f:4d40 Sprites_@
 5f:4d40 .ptrtable:8:data
+5f:4d48 SpriteFrameset_05f_4d48
+5f:4d48 .ptrtable:4:data
+5f:4d4c SpriteFrame_05f_4d4c
+5f:4d4c .data:1
+5f:4d4d .data:18:4
+5f:4d65 SpriteFrame_05f_4d65
+5f:4d65 .data:1
+5f:4d66 .data:18:4
+5f:4d7e SpriteAnim_05f_4d7e
+5f:4d7e .data:1
+5f:4d7f .data:4:2
 5f:4d83 SpriteFrameset_05f_4d83
 5f:4d83 .ptrtable:4:data
 5f:4d87 SpriteFrame_05f_4d87
@@ -2091,6 +2291,89 @@
 5f:4d95 SpriteAnim_05f_4d95
 5f:4d95 .data:1
 5f:4d96 .data:4:2
+5f:4d9a SpriteFrameset_05f_4d9a
+5f:4d9a .ptrtable:4:data
+5f:4d9e SpriteFrame_05f_4d9e
+5f:4d9e .data:1
+5f:4d9f .data:10:4
+5f:4daf SpriteFrame_05f_4daf
+5f:4daf .data:1
+5f:4db0 .data:10:4
+5f:4dc0 SpriteAnim_05f_4dc0
+5f:4dc0 .data:1
+5f:4dc1 .data:4:2
+5f:4dc5 SpriteFrameset_05f_4dc5
+5f:4dc5 .ptrtable:2:data
+5f:4dc7 SpriteFrame_05f_4dc7
+5f:4dc7 .data:1
+5f:4dc8 .data:18:4
+5f:4de0 SpriteAnim_05f_4de0
+5f:4de0 .data:1
+5f:4de1 .data:2:2
+5f:4de3 SpriteFrameset_05f_4de3
+5f:4de3 .ptrtable:2:data
+5f:4de5 SpriteFrame_05f_4de5
+5f:4de5 .data:1
+5f:4de6 .data:18:4
+5f:4dfe SpriteAnim_05f_4dfe
+5f:4dfe .data:1
+5f:4dff .data:2:2
+5f:4e01 SpriteFrameset_05f_4e01
+5f:4e01 .ptrtable:2:data
+5f:4e03 SpriteFrame_05f_4e03
+5f:4e03 .data:1
+5f:4e04 .data:1c:4
+5f:4e20 SpriteAnim_05f_4e20
+5f:4e20 .data:1
+5f:4e21 .data:2:2
+5f:4e23 SpriteFrameset_05f_4e23
+5f:4e23 .ptrtable:2:data
+5f:4e25 SpriteFrame_05f_4e25
+5f:4e25 .data:1
+5f:4e26 .data:1c:4
+5f:4e42 SpriteAnim_05f_4e42
+5f:4e42 .data:1
+5f:4e43 .data:2:2
+5f:4e45 SpriteFrameset_05f_4e45
+5f:4e45 .ptrtable:2:data
+5f:4e47 SpriteFrame_05f_4e47
+5f:4e47 .data:1
+5f:4e48 .data:c:4
+5f:4e54 SpriteAnim_05f_4e54
+5f:4e54 .data:1
+5f:4e55 .data:2:2
+5f:4e57 SpriteFrameset_05f_4e57
+5f:4e57 .ptrtable:2:data
+5f:4e59 SpriteFrame_05f_4e59
+5f:4e59 .data:1
+5f:4e5a .data:c:4
+5f:4e66 SpriteAnim_05f_4e66
+5f:4e66 .data:1
+5f:4e67 .data:2:2
+5f:4e69 SpriteFrameset_05f_4e69
+5f:4e69 .ptrtable:2:data
+5f:4e6b SpriteFrame_05f_4e6b
+5f:4e6b .data:1
+5f:4e6c .data:c:4
+5f:4e78 SpriteAnim_05f_4e78
+5f:4e78 .data:1
+5f:4e79 .data:2:2
+5f:4e7b SpriteFrameset_05f_4e7b
+5f:4e7b .ptrtable:2:data
+5f:4e7d SpriteFrame_05f_4e7d
+5f:4e7d .data:1
+5f:4e7e .data:c:4
+5f:4e8a SpriteAnim_05f_4e8a
+5f:4e8a .data:1
+5f:4e8b .data:2:2
+5f:4e8d SpriteFrameset_05f_4e8d
+5f:4e8d .ptrtable:2:data
+5f:4e8f SpriteFrame_05f_4e8f
+5f:4e8f .data:1
+5f:4e90 .data:c:4
+5f:4e9c SpriteAnim_05f_4e9c
+5f:4e9c .data:1
+5f:4e9d .data:2:2
 5f:4e9f SpriteFrameset_05f_4e9f
 5f:4e9f .ptrtable:2:data
 5f:4ea1 SpriteFrame_05f_4ea1
@@ -2643,6 +2926,40 @@
 6a:62b0 .data:40:8
 6a:62f0 Pal_@
 6a:62f0 .data:40:8
+6a:6330 SpriteFrameset_06a_6330
+6a:6330 .ptrtable:12:data
+6a:6342 SpriteFrame_06a_6342
+6a:6342 .data:1
+6a:6343 .data:20:4
+6a:6363 SpriteFrame_06a_6363
+6a:6363 .data:1
+6a:6364 .data:20:4
+6a:6384 SpriteFrame_06a_6384
+6a:6384 .data:1
+6a:6385 .data:20:4
+6a:63a5 SpriteFrame_06a_63a5
+6a:63a5 .data:1
+6a:63a6 .data:20:4
+6a:63c6 SpriteFrame_06a_63c6
+6a:63c6 .data:1
+6a:63c7 .data:20:4
+6a:63e7 SpriteFrame_06a_63e7
+6a:63e7 .data:1
+6a:63e8 .data:20:4
+6a:6408 SpriteFrame_06a_6408
+6a:6408 .data:1
+6a:6409 .data:20:4
+6a:6429 SpriteFrame_06a_6429
+6a:6429 .data:1
+6a:642a .data:30:4
+6a:645a SpriteFrame_06a_645a
+6a:645a .data:1
+6a:645b .data:40:4
+6a:649b SpriteAnim_06a_649b
+6a:649b .data:1
+6a:649c .data:12:2
+6a:64ae Sprites_@
+6a:64ae .ptrtable:4:data
 6a:64b2 Data_@
 6a:64b2 .data:1
 6a:64b3 .ptrtable:20:data
@@ -2751,6 +3068,85 @@
 6c:5f6e .data:9b:5
 ; bank, addr, addr
 6c:61ac Call_@
+
+; Bank 70 (unfinished)
+70:534c Sprites_@
+70:534c .ptrtable:10:data
+70:535c SpriteFrameset_070_535c
+70:535c .ptrtable:2:data
+70:535e SpriteFrame_070_535e
+70:535e .data:1
+70:535f .data:38:4
+70:5397 SpriteAnim_070_5397
+70:5397 .data:1
+70:5398 .data:2:2
+70:539a SpriteFrameset_070_539a
+70:539a .ptrtable:2:data
+70:539c SpriteFrame_070_539c
+70:539c .data:1
+70:539d .data:38:4
+70:53d5 SpriteAnim_070_53d5
+70:53d5 .data:1
+70:53d6 .data:2:2
+70:53d8 SpriteFrameset_070_53d8
+70:53d8 .ptrtable:4:data
+70:53dc SpriteFrame_070_53dc
+70:53dc .data:1
+70:53dd .data:8:4
+70:53e5 SpriteFrame_070_53e5
+70:53e5 .data:1
+70:53e6 .data:0:4
+70:53e6 SpriteAnim_070_53e6
+70:53e6 .data:1
+70:53e7 .data:4:2
+70:53eb Sprites_@
+70:53eb .ptrtable:18:data
+70:5403 SpriteFrameset_070_5403
+70:5403 .ptrtable:4:data
+70:5407 SpriteFrame_070_5407
+70:5407 .data:1
+70:5408 .data:10:4
+70:5418 SpriteFrame_070_5418
+70:5418 .data:1
+70:5419 .data:10:4
+70:5429 SpriteAnim_070_5429
+70:5429 .data:1
+70:542a .data:4:2
+70:542e SpriteFrameset_070_542e
+70:542e .ptrtable:4:data
+70:5432 SpriteFrame_070_5432
+70:5432 .data:1
+70:5433 .data:10:4
+70:5443 SpriteFrame_070_5443
+70:5443 .data:1
+70:5444 .data:10:4
+70:5454 SpriteAnim_070_5454
+70:5454 .data:1
+70:5455 .data:4:2
+70:5459 SpriteFrameset_070_5459
+70:5459 .ptrtable:2:data
+70:545b SpriteFrame_070_545b
+70:545b .data:1
+70:545c .data:8:4
+70:5464 SpriteAnim_070_5464
+70:5464 .data:1
+70:5465 .data:2:2
+70:5467 SpriteFrameset_070_5467
+70:5467 .ptrtable:2:data
+70:5469 SpriteFrame_070_5469
+70:5469 .data:1
+70:546a .data:8:4
+70:5472 SpriteAnim_070_5472
+70:5472 .data:1
+70:5473 .data:2:2
+70:5475 SpriteFrameset_070_5475
+70:5475 .ptrtable:2:data
+70:5477 SpriteFrame_070_5477
+70:5477 .data:1
+70:5478 .data:8:4
+70:5480 SpriteAnim_070_5480
+70:5480 .data:1
+70:5481 .data:2:2
 ; INSERT
 
 ; Bank 71 (unfinished)
@@ -2814,6 +3210,14 @@
 71:6f38 Sprites_@
 71:6f6f Map_@
 71:6f6f .data:2d0:14
+
+; Bank 72 (unfinished)
+72:4e40 Sprites_@
+72:7828 Sprites_@
+72:7858 Sprites_@
+
+; Bank 73 (unfinished)
+73:5f0f Sprites_@
 
 ; Bank 74: HTML parser (unfinished)
 74:4000 Ptrtable_@
@@ -3052,6 +3456,20 @@
 7f:51ed Call_@
 7f:5cb8 Call_@
 7f:61e8 Call_@
+7f:6db0 Sprites_@
+7f:6dc0 Sprites_@
+7f:6dd0 Sprites_@
+7f:6de0 Sprites_@
+7f:6df0 Sprites_@
+7f:6e00 Sprites_@
+7f:6e10 Sprites_@
+7f:6e20 Sprites_@
+7f:6e30 Sprites_@
+7f:6e40 Sprites_@
+7f:7b50 Sprites_@
+7f:7b60 Sprites_@
+7f:7b70 Sprites_@
+7f:7b80 Sprites_@
 
 ; Preliminary farcall targets
 22:4000 Farcall_@
