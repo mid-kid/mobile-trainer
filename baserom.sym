@@ -3603,6 +3603,10 @@
 70:40c7 .ptrtable:12:code
 70:40d9 Data_@
 70:40d9 .ptrtable:a:code
+70:46a6 Call_@
+70:4740 Call_@
+70:4822 Data_@
+70:4822 .ptrtable:10:data
 70:534c Sprites_@
 70:534c .ptrtable:10:data
 70:535c SpriteFrameset_070_535c
@@ -3702,6 +3706,22 @@
 70:6cd0 .data:40:8
 70:6d10 Map_@
 70:6d10 .data:380:20
+70:7090 Map_@
+70:7090 .data:a0:14
+70:7130 Map_@
+70:7130 .data:a0:14
+70:71d0 Map_@
+70:71d0 .data:a0:14
+70:7270 Map_@
+70:7270 .data:a0:14
+70:7310 Map_@
+70:7310 .data:a0:14
+70:73b0 Map_@
+70:73b0 .data:a0:14
+70:7450 Map_@
+70:7450 .data:a0:14
+70:74f0 Map_@
+70:74f0 .data:a0:14
 ; INSERT
 
 ; Bank 71 (unfinished)
@@ -4546,6 +4566,8 @@
 00:c27f w_c27e__1
 ; dw
 00:c280 w_c280
+; db
+00:c281 w_c281
 ; db
 00:c282 w_c282
 ; db
