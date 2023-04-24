@@ -4909,15 +4909,14 @@
 
 ; Bank 7c (unfinished)
 7c:7b7c Farcall_@
-7c:7bb7 Farcall_@
-7c:7d1f Farcall_@
 7c:7b8e .ptrtable:8:code
 7c:7b96 Call_@
+7c:7bb7 Farcall_@
 7c:7bc9 .ptrtable:e:code
 7c:7bd7 Call_@
+7c:7d1f Farcall_@
 7c:7d60 .ptrtable:c:code
 7c:7d6c Call_@
-; INSERT
 
 ; Bank 7d (unfinished)
 7d:7ba4 Farcall_@
@@ -4925,6 +4924,7 @@
 7d:7bc1 Farcall_@
 7d:7bf0 Farcall_@
 7d:7c00 Farcall_@
+; INSERT
 
 ; bank 7e (unfinished)
 7e:7c34 Farcall_@
@@ -5278,12 +5278,16 @@
 ; dw
 00:c2df w_vblank_occurred
 ; db
+00:c2e0 w_c2e0
+; db
 00:c2e1 w_c2e1__0
 00:c2e2 w_c2e1__1
 ; dw
 00:c2e3 w_c2e3__0
 00:c2e4 w_c2e3__1
 ; dw
+00:c2e5 w_c2e5
+; ds ??
 00:c2f5 w_c2f5
 ; db
 00:c330 w_c330
@@ -5344,6 +5348,8 @@
 00:ffa5 h_ffa5
 ; db
 00:ffa6 h_ffa6
+; db
+00:ffa7 h_ffa7
 ; db
 00:ffa8 h_farcall_jump__ld_a
 00:ffa9 h_farcall_jump__a
