@@ -34,20 +34,20 @@ for x in range(0, size // 2, 2):
         frames = offs
 
         ptr = (frameset % 0x4000) + 0x4000
-        print("%02x:%04x SpriteFrameset_0%02x_%04x" % (bank, ptr, bank, ptr))
+        print("%02x:%04x SpriteFrameset_@" % (bank, ptr))
         print("%02x:%04x .ptrtable:%x:data" % (bank, ptr, frames * 2))
 
         for frame in range(frames):
             ptr = read_ptr(frameset + frame * 2)
             len = file[ptr]
             ptr = (ptr % 0x4000) + 0x4000
-            print("%02x:%04x SpriteFrame_0%02x_%04x" % (bank, ptr, bank, ptr))
+            print("%02x:%04x SpriteFrame_@" % (bank, ptr))
             print("%02x:%04x .data:1" % (bank, ptr))
             print("%02x:%04x .data:%x:4" % (bank, ptr + 1, len * 4))
 
     if anim != 0:
         len = file[anim]
         ptr = (anim % 0x4000) + 0x4000
-        print("%02x:%04x SpriteAnim_0%02x_%04x" % (bank, ptr, bank, ptr))
+        print("%02x:%04x SpriteAnim_@" % (bank, ptr))
         print("%02x:%04x .data:1" % (bank, ptr))
         print("%02x:%04x .data:%x:2" % (bank, ptr + 1, len * 2))
