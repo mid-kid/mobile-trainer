@@ -303,7 +303,7 @@
 04:5515 .data:230:8
 ; dw:addr, dw:bank, db:unk, db:unk, db:unk, db:unk
 
-; Audio data
+; Bank 04: Audio 1
 04:5745 .data:2747
 04:58bc Audio_@
 04:5cbf Audio_@
@@ -318,6 +318,8 @@
 04:7bd9 Audio_@
 04:7da2 Audio_@
 04:7e82 Audio_@
+
+; Bank 05: Audio 2
 05:4000 .data:28c3
 05:4218 Audio_@
 05:4540 Audio_@
@@ -4888,16 +4890,34 @@
 74:5b4f Farcall_@
 74:5b5c Farcall_@
 74:5ba0 Farcall_@
-; INSERT
 
 ; Bank 75: Mobile Adapter SDK
 75:4030 Farcall_@
 ; Not gonna disassemble here
 
+; Bank 76 (unfinished)
+
+; Bank 77 (unfinished)
+
+; Bank 78 (unfinished)
+
+; Bank 79 (unfinished)
+
+; Bank 7a (unfinished)
+
+; Bank 7b (unfinished)
+
 ; Bank 7c (unfinished)
 7c:7b7c Farcall_@
 7c:7bb7 Farcall_@
 7c:7d1f Farcall_@
+7c:7b8e .ptrtable:8:code
+7c:7b96 Call_@
+7c:7bc9 .ptrtable:e:code
+7c:7bd7 Call_@
+7c:7d60 .ptrtable:c:code
+7c:7d6c Call_@
+; INSERT
 
 ; Bank 7d (unfinished)
 7d:7ba4 Farcall_@
