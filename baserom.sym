@@ -369,7 +369,7 @@
 0e:4000 Farcall_@
 0e:4094 Jumptable_@
 0e:4094 .ptrtable:e:code
-0e:4330 Ptrtable_@
+0e:4330 Data_@
 0e:4330 .ptrtable:4:data
 0e:434b SpritePos_@
 0e:434b .data:4:2
@@ -2102,7 +2102,7 @@
 3f:4006 .text:b
 3f:4014 di_html_pointers
 3f:4014 .data:a5:3
-3f:40b9 Ptrtable_@
+3f:40b9 Data_@
 3f:40b9 .ptrtable:16:data
 
 ; Bank 47 (unfinished)
@@ -4436,10 +4436,9 @@
 73:6096 .ptrtable:a:code
 73:6143 Call_@
 73:6149 Call_@
-; INSERT
 
-; Bank 74: HTML parser (unfinished)
-74:4000 Ptrtable_@
+; Bank 74: HTML parser
+74:4000 Data_@
 74:4000 .ptrtable:6:data
 74:4006 String_@
 74:4006 .text:3
@@ -4459,7 +4458,7 @@
 74:4027 .text:6
 74:402d html_entity_nbsp
 74:402d .text:6
-74:4033 Ptrtable_@
+74:4033 Data_@
 74:4033 .ptrtable:8:data
 74:403b String_@
 74:403b .text:7
@@ -4470,24 +4469,24 @@
 74:404b String_@
 74:404b .text:7
 74:4052 .data:1
-74:4053 Ptrtable_@
+74:4053 Data_@
 74:4053 .ptrtable:4:data
-74:4057 Ptrtable_@
+74:4057 Data_@
 74:4057 .ptrtable:4:data
 74:405b html_attr_clear
 74:405b .text:6
 74:4061 .data:1
-74:4062 Ptrtable_@
+74:4062 Data_@
 74:4062 .ptrtable:4:data
 74:4066 html_attr_width
 74:4066 .text:6
 74:406c .data:1
-74:406d Ptrtable_@
+74:406d Data_@
 74:406d .ptrtable:4:data
 74:4071 html_attr_align
 74:4071 .text:6
 74:4077 .data:1
-74:4078 Ptrtable_@
+74:4078 Data_@
 74:4078 .ptrtable:6:data
 74:407e html_attr_href
 74:407e .text:5
@@ -4495,7 +4494,7 @@
 74:4084 html_attr_name
 74:4084 .text:5
 74:4089 .data:1
-74:408a Ptrtable_@
+74:408a Data_@
 74:408a .ptrtable:6:data
 74:4090 html_attr_src
 74:4090 .text:4
@@ -4503,7 +4502,7 @@
 74:4095 html_attr_align
 74:4095 .text:6
 74:409b .data:1
-74:409c Ptrtable_@
+74:409c Data_@
 74:409c .ptrtable:8:data
 74:40a4 html_attr_left2
 74:40a4 .text:5
@@ -4514,7 +4513,7 @@
 74:40b1 html_attr_all
 74:40b1 .text:4
 74:40b5 .data:1
-74:40b6 Ptrtable_@
+74:40b6 Data_@
 74:40b6 .ptrtable:e:data
 74:40c4 String_@
 74:40c4 html_attr_right
@@ -4537,6 +4536,7 @@
 74:40ed .data:1
 74:40ee html_tags
 74:40ee .ptrtable:24:data
+74:4110 Data_@
 74:4112 html_tag_html
 74:4112 .text:5
 74:4117 .data:1
@@ -4589,12 +4589,13 @@
 74:4160 .text:4
 74:4164 .data:1
 74:4165 Call_@
-74:44a0 Ptrtable_@
+74:44a0 Data_@
 74:44a0 .ptrtable:24:code
 74:44c4 Call_@
+74:4995 Call_@
 74:4c12 Call_@
 74:4c33 Call_@
-74:511a Ptrtable_@
+74:511a Data_@
 74:511a .ptrtable:24:code
 74:5905 uri_schemes
 74:5905 .ptrtable:18:data
@@ -4622,9 +4623,10 @@
 74:595f .text:a
 74:59d8 String_@
 74:59d8 .text:8
+; INSERT
 
 ; Bank 75: Mobile Adapter SDK
-; Honestly just copy over the pokecrystal file...
+; Not gonna disassemble here
 
 ; Bank 7f (unfinished)
 7f:4d88 String_@
@@ -4633,7 +4635,7 @@
 7f:4df2 .text:1b
 7f:4e6a String_@
 7f:4e6a .text:1b
-7f:4e89 Ptrtable_@
+7f:4e89 Data_@
 7f:4e89 .ptrtable:e:data
 7f:4e97 String_@
 7f:4e97 .text:11
@@ -4647,7 +4649,7 @@
 7f:4ee1 .text:7
 7f:4ee8 String_@
 7f:4ee8 .text:8
-7f:4ef0 Ptrtable_@
+7f:4ef0 Data_@
 7f:4ef0 .ptrtable:c:data
 7f:4efc String_@
 7f:4efc .text:19
@@ -5132,6 +5134,11 @@
 00:c1d0 w_c1d0__0
 00:c1d1 w_c1d0__1
 ; dw
+00:c1dd w_c1dd
+; db
+00:c1de w_c1de__0
+00:c1df w_c1de__1
+; dw
 00:c220 w_c220
 ; ds ??
 00:c264 w_c264
@@ -5206,6 +5213,8 @@
 ; db
 00:c2c0 w_c2c0
 ; db
+00:c2c1 w_c2c1
+; db
 00:c2c3 w_c2c3
 ; db
 00:c2ca w_c2ca
@@ -5245,6 +5254,31 @@
 ; dw
 00:c2f5 w_c2f5
 ; db
+00:c330 w_c330
+; db
+00:c331 w_c331
+; db
+00:c332 w_c332
+; db
+00:c335 w_c335
+; db
+00:c336 w_c336__0
+00:c337 w_c336__1
+; dw
+00:c338 w_c338__0
+00:c339 w_c338__1
+; dw
+00:c33a w_c33a__0
+00:c33b w_c33a__1
+; dw
+00:c33c w_c33c
+; db
+00:c33d w_c33d
+; db
+00:c33e w_c33e
+; db
+00:c380 w_c380
+; ds ??
 00:c820 w_c820__0
 00:c821 w_c820__1
 ; dw
@@ -5297,6 +5331,12 @@
 00:ffb4 h_ffb4__0
 00:ffb5 h_ffb4__1
 ; dw
+00:ffb6 h_ffb6__0
+00:ffb7 h_ffb6__1
+; dw
+00:ffb8 h_ffb8__0
+00:ffb9 h_ffb8__1
+; dw
 00:ffba h_ffba__0
 00:ffbb h_ffba__1
 00:ffbc h_ffba__2
@@ -5312,6 +5352,60 @@
 00:ffc6 h_ffba__12
 00:ffc7 h_ffba__13
 ; ds 16
+00:ffc8 h_ffc8__0
+00:ffc9 h_ffc8__1
+; dw
+00:ffca h_ffca__0
+00:ffcb h_ffca__1
+; dw
+00:ffcc h_ffcc__0
+00:ffcd h_ffcc__1
+; dw
+00:ffce h_ffce__0
+00:ffcf h_ffce__1
+; dw
+00:ffd0 h_ffd0
+; db
+00:ffd1 h_ffd1
+; db
+00:ffd2 h_ffd2
+; db
+00:ffd3 h_ffd3
+; db
+00:ffd4 h_ffd4
+; db
+00:ffd5 h_ffd5
+; db
+00:ffd6 h_ffd6
+; db
+00:ffd7 h_ffd7
+; db
+00:ffd8 h_ffd8__0
+00:ffd9 h_ffd8__1
+; dw
+00:ffda h_ffda__0
+00:ffdb h_ffda__1
+; dw
+00:ffdc h_ffdc__0
+00:ffdd h_ffdc__1
+; dw
+00:ffdf h_ffdf
+; db
+00:ffe0 h_ffe0
+; db
+00:ffe1 h_ffe1__0
+00:ffe2 h_ffe1__1
+; dw
+00:ffe5 h_ffe5__0
+00:ffe6 h_ffe5__1
+; dw
+00:ffeb h_ffeb__0
+00:ffec h_ffeb__1
+; dw
+00:ffed h_ffed__0
+00:ffee h_ffed__1
+00:ffef h_ffed__2
+; ds 3
 00:fff0 h_fff0__0
 00:fff1 h_fff0__1
 ; dw
@@ -5325,4 +5419,9 @@
 ; db
 00:fff6 h_fff6
 ; db
+00:fff7 h_fff7__0
+00:fff8 h_fff7__1
+00:fff9 h_fff7__2
+; ds 3
 00:fffc h_fffc
+; db
