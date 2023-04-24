@@ -1158,6 +1158,7 @@
 1f:434b .data:6
 
 ; Bank 22
+22:4000 Farcall_@
 22:43e0 Comp_@
 22:43e0 .data:6d
 22:4468 Comp_@
@@ -1184,8 +1185,12 @@
 22:4da6 .data:7
 22:4ee9 Data_@
 22:4ee9 .data:7
+22:4fa9 Farcall_@
+22:4ff6 Farcall_@
+22:501d Farcall_@
 22:50cf Call_@
 22:50e6 Call_@
+22:50fc Farcall_@
 22:510b .data:5
 22:5110 Map_@
 22:5110 .data:2d0:14
@@ -1202,6 +1207,13 @@
 22:5c90 .data:40:8
 
 ; Bank 23 (unfinished)
+23:4000 Farcall_@
+23:4c94 Farcall_@
+23:51c7 Farcall_@
+23:58c4 Farcall_@
+23:5fa2 Farcall_@
+23:6699 Farcall_@
+23:6f00 Farcall_@
 23:6fe0 Gfx_@
 23:6fe0 .image:400
 23:73e0 Gfx_@
@@ -1228,6 +1240,7 @@
 
 ; Bank 24 (unfinished)
 24:4000 Data_@
+24:4018 Farcall_@
 24:42b0 Call_@
 24:42d1 String_@
 24:42d1 .text:16
@@ -1282,6 +1295,10 @@
 24:7bf0 Sprites_@
 
 ; Bank 25 (unfinished)
+25:4000 Farcall_@
+25:4a90 Farcall_@
+25:4b0d Farcall_@
+25:538a Farcall_@
 25:6410 Map_@
 25:6410 .data:2d0:14
 25:66e0 Map_@
@@ -1302,6 +1319,9 @@
 25:7cd0 .data:2d0:14
 
 ; Bank 26 (unfinished)
+26:4000 Farcall_@
+26:5067 Farcall_@
+26:58dc Farcall_@
 26:59e0 Gfx_@
 26:59e0 .image:400
 26:5de0 Gfx_@
@@ -1338,6 +1358,11 @@
 26:7bd0 Sprites_@
 
 ; Bank 27 (unfinished)
+27:4000 Farcall_@
+27:41bc Farcall_@
+27:41e3 Farcall_@
+27:4768 Farcall_@
+27:49b0 Farcall_@
 27:5060 Gfx_@
 27:5060 .image:400
 27:5460 Gfx_@
@@ -1388,6 +1413,8 @@
 27:7ae0 Sprites_@
 
 ; Bank 28 (unfinished)
+28:4000 Farcall_@
+28:41cb Farcall_@
 28:42c0 Gfx_@
 28:42c0 .image:210
 28:44d0 Gfx_@
@@ -1493,6 +1520,9 @@
 28:757b Sprites_@
 
 ; Bank 29 (unfinished)
+29:4000 Farcall_@
+29:44f6 Farcall_@
+29:5017 Farcall_@
 29:5060 Gfx_@
 29:5060 .image:30
 29:5400 Gfx_@
@@ -1517,16 +1547,20 @@
 29:63c0 Sprites_@
 
 ; Bank 2a (unfinished)
+2a:4000 Farcall_@
 2a:4cd0 Map_@
 2a:4cd0 .data:2d0:14
 2a:4fa0 Pal_@
 2a:4fa0 .data:40:8
+2a:5c3b Farcall_@
 2a:6b40 Map_@
 2a:6b40 .data:2d0:14
 2a:6e10 Pal_@
 2a:6e10 .data:40:8
 2a:6e70 Sprites_@
 2a:6e80 Sprites_@
+2a:6f95 Farcall_@
+2a:7293 Farcall_@
 2a:75a0 Pal_@
 2a:75a0 .data:40:8
 2a:75e0 Gfx_@
@@ -1541,6 +1575,7 @@
 2a:7dd0 .image:b0
 
 ; Bank 2b (unfinished)
+2b:4000 Farcall_@
 2b:4880 Gfx_@
 2b:4880 .image:2d0
 2b:4b50 Map_@
@@ -1571,6 +1606,7 @@
 2b:63f0 Pal_@
 2b:63f0 .data:40:8
 2b:6430 Sprites_@
+2b:6482 Farcall_@
 2b:73d0 Map_@
 2b:73d0 .data:2d0:14
 2b:76a0 Pal_@
@@ -1584,14 +1620,19 @@
 2b:78f0 Sprites_@
 2b:7900 Sprites_@
 2b:7910 Sprites_@
+2b:7d92 Farcall_@
 
 ; Bank 2c (unfinished)
+2c:4000 Farcall_@
 2c:4e30 Map_@
 2c:4e30 .data:2d0:14
 2c:5100 Pal_@
 2c:5100 .data:40:8
 2c:5670 Pal_@
 2c:5670 .data:40:8
+2c:56fe Farcall_@
+2c:614d Farcall_@
+2c:665f Farcall_@
 2c:6730 Gfx_@
 2c:6730 .image:400
 2c:6b30 Gfx_@
@@ -1627,6 +1668,11 @@
 2c:7f90 .data:40:8
 
 ; Bank 2d (unfinished)
+2d:4000 Farcall_@
+2d:403c Farcall_@
+2d:408f Farcall_@
+2d:40dc Farcall_@
+2d:4133 Farcall_@
 2d:42bb String_@
 2d:42bb .text:15
 2d:42d0 String_@
@@ -1698,6 +1744,12 @@
 2d:466d String_@
 2d:466d .text:19
 2d:4686 Call_@
+2d:46e9 Farcall_@
+2d:4722 Farcall_@
+2d:4e06 Farcall_@
+2d:4e2d Farcall_@
+2d:4ec0 Farcall_@
+2d:5016 Farcall_@
 2d:5ac0 Gfx_@
 2d:5ac0 .image:3c0:w32
 2d:5fc0 Map_@
@@ -1708,12 +1760,18 @@
 2d:62d0 .image:2a0:w16
 2d:6570 Pal_@
 2d:6570 .data:40:8
+2d:65b0 Farcall_@
+2d:6c64 Farcall_@
+2d:70f4 Farcall_@
 2d:7b50 Map_@
 2d:7b50 .data:2d0:14
 2d:7e20 Pal_@
 2d:7e20 .data:30:8
 
 ; Bank 2e (unfinished)
+2e:4000 Farcall_@
+2e:4f06 Farcall_@
+2e:55fa Farcall_@
 2e:56e0 Gfx_@
 2e:56e0 .image:400
 2e:5ae0 Gfx_@
@@ -1747,21 +1805,30 @@
 2e:7700 Sprites_@
 
 ; Bank 2f (unfinished)
+2f:4000 Farcall_@
+2f:4ac0 Farcall_@
 2f:4d40 Map_@
 2f:4d40 .data:2d0:14
 2f:5010 Sprites_@
 2f:5020 Sprites_@
 2f:5030 Sprites_@
 2f:5040 Sprites_@
+2f:5098 Farcall_@
+2f:54e1 Farcall_@
+2f:55cd Farcall_@
+2f:56b9 Farcall_@
 2f:57b0 Sprites_@
+2f:57f2 Farcall_@
 2f:69f0 Map_@
 2f:69f0 .data:2d0:14
 2f:6cc0 Pal_@
 2f:6cc0 .data:40:8
+2f:6d00 Farcall_@
 2f:7ac0 Map_@
 2f:7ac0 .data:2d0:14
 2f:7d90 Pal_@
 2f:7d90 .data:40:8
+2f:7ebf Farcall_@
 
 ; Bank 3d: Test page htmls 1
 3d:4000 String_@
@@ -2119,6 +2186,29 @@
 47:40d0 Gfx_@
 47:40d0 .image:30
 
+; Bank 48 (unfinished)
+48:4000 Farcall_@
+48:403e decompress_unk
+48:40a9 decompress
+48:415a Farcall_@
+48:4223 Farcall_@
+48:42d4 stringtable_unk
+48:4460 Farcall_@
+48:44e0 Farcall_@
+48:4540 Farcall_@
+48:4616 farmemput8
+48:4679 Farcall_@
+48:46c6 Farcall_@
+48:4728 Farcall_@
+48:4748 Farcall_@
+48:4899 Farcall_@
+48:48bb Farcall_@
+48:4920 Farcall_@
+48:498c Farcall_@
+48:49db Farcall_@
+48:4a4e Farcall_@
+48:4aab Farcall_@
+
 ; Bank 4a (unfinished)
 4a:4000 Sprites_@
 4a:4000 .ptrtable:8:data
@@ -2281,12 +2371,35 @@
 4b:7d10 .data:2d0:14
 
 ; Bank 4c (unfinished)
+4c:4000 Farcall_@
+4c:46b8 Farcall_@
+4c:46d6 Farcall_@
+4c:46f4 Farcall_@
+4c:477e Farcall_@
+4c:47c4 Farcall_@
+4c:4840 Farcall_@
+4c:4b54 Farcall_@
+4c:4b7c Farcall_@
+4c:4b81 Farcall_@
+4c:4bc1 Farcall_@
+4c:4c4e Farcall_@
+4c:4c95 Farcall_@
+4c:4cf6 Farcall_@
+4c:4d6f Farcall_@
+4c:4db2 Farcall_@
+4c:4dfb Farcall_@
 4c:4f11 String_@
 4c:4f11 .text:14
 4c:4f25 String_@
 4c:4f25 .text:20
 4c:4f45 String_@
 4c:4f45 .text:11
+4c:4f56 Farcall_@
+4c:5111 Farcall_@
+4c:5122 Farcall_@
+4c:51a1 Farcall_@
+4c:5274 Farcall_@
+4c:52a8 Farcall_@
 
 ; Bank 4d (unfinished)
 4d:4000 Gfx_@
@@ -2379,10 +2492,61 @@
 4d:797f .data:4:2
 
 ; Bank 4e (unfinished)
+4e:45fe Farcall_@
+4e:4658 Farcall_@
+4e:46a3 Farcall_@
+4e:46cf Farcall_@
+4e:4749 Farcall_@
+4e:4795 Farcall_@
+4e:4866 Farcall_@
+4e:488d Farcall_@
+4e:48cb Farcall_@
 4e:4904 String_@
 4e:4904 .text:37
+4e:493b Farcall_@
+4e:5204 Farcall_@
+4e:5274 Farcall_@
+4e:52e7 Farcall_@
+4e:53a1 Farcall_@
+4e:53d1 Farcall_@
+4e:5423 Farcall_@
+4e:5435 Farcall_@
+4e:5512 Farcall_@
+4e:56db Farcall_@
+4e:5716 Farcall_@
+4e:574d Farcall_@
+4e:5b69 Farcall_@
+4e:5c10 Farcall_@
+4e:5cb6 Farcall_@
+4e:5e11 Farcall_@
+4e:5e5b Farcall_@
+4e:5ec0 Farcall_@
+4e:5fb9 Farcall_@
+4e:604c Farcall_@
+4e:60a6 Farcall_@
+4e:60c5 Farcall_@
+4e:60e4 Farcall_@
+4e:612b Farcall_@
+4e:6196 Farcall_@
+4e:6291 Farcall_@
+
+; Bank 4f (unfinished)
+4f:4000 pal_load
+4f:400e Farcall_@
+4f:404b Farcall_@
+4f:4166 Farcall_@
+4f:41e0 Farcall_@
+4f:42b4 Farcall_@
+4f:42ff Farcall_@
+4f:4370 Farcall_@
+4f:43b8 Farcall_@
+4f:4572 Farcall_@
+4f:45c6 Farcall_@
+4f:4604 Farcall_@
+4f:4668 Farcall_@
 
 ; Bank 50 (unfinished)
+50:4000 Farcall_@
 50:5a20 Gfx_@
 50:5a20 .image:400
 50:5e20 Gfx_@
@@ -2411,6 +2575,11 @@
 50:6d1a Sprites_@
 
 ; Bank 51 (unfinished)
+51:4000 Farcall_@
+51:404a Farcall_@
+51:4239 Farcall_@
+51:4245 Farcall_@
+51:425f Farcall_@
 51:42a0 Gfx_@
 51:42a0 .image:400
 51:46a0 Gfx_@
@@ -2433,8 +2602,35 @@
 51:5cc0 .image:200
 51:5ec0 Pal_@
 51:5ec0 .data:20:8
+51:70e0 Farcall_@
+51:7177 Farcall_@
+51:740d Farcall_@
 
 ; Bank 54 (unfinished)
+54:4011 Farcall_@
+54:403d Farcall_@
+54:405d Farcall_@
+54:4141 Farcall_@
+54:418c Farcall_@
+54:41a3 Farcall_@
+54:423c Farcall_@
+54:4266 Farcall_@
+54:4288 Farcall_@
+54:42fb Farcall_@
+54:4357 Farcall_@
+54:4483 Farcall_@
+54:4492 Farcall_@
+54:44fe Farcall_@
+54:451b Farcall_@
+54:4538 Farcall_@
+54:4552 Farcall_@
+54:4575 Farcall_@
+54:4748 Farcall_@
+54:4772 Farcall_@
+54:485c Farcall_@
+54:489b Farcall_@
+54:4914 Farcall_@
+54:4969 Farcall_@
 54:49e0 String_@
 54:49e0 .text:21
 54:4a01 String_@
@@ -2447,6 +2643,8 @@
 54:4c2a .text:a
 54:4cad String_@
 54:4cad .text:3
+54:4cb0 Farcall_@
+54:4cf4 Farcall_@
 54:5343 string_jan
 54:5343 .text:3
 54:5346 string_feb
@@ -2471,6 +2669,17 @@
 54:5361 .text:3
 54:5364 string_dec
 54:5364 .text:3
+54:5386 Farcall_@
+54:53bb Farcall_@
+
+; Bank 55 (unfinished)
+55:5ba2 Farcall_@
+55:5c8f Farcall_@
+55:651c Farcall_@
+55:6559 Farcall_@
+55:6cc6 Farcall_@
+55:6fcd Farcall_@
+55:7000 Farcall_@
 
 ; Bank 56 (unfinished)
 56:418a Map_@
@@ -2516,8 +2725,11 @@
 56:79b8 Sprites_@
 
 ; Bank 57 (unfinished)
+57:4000 Farcall_@
 57:4d30 Gfx_@
 57:4d30 .image:10
+57:53b9 Farcall_@
+57:541c Farcall_@
 
 ; Bank 58 (unfinished)
 58:4000 Gfx_@
@@ -2560,6 +2772,7 @@
 5b:56a0 .data:8:8
 
 ; Bank 5c (unfinished)
+5c:5150 Farcall_@
 5c:5516 Map_@
 5c:5516 .data:2d0:14
 5c:57e6 Map_@
@@ -3016,7 +3229,7 @@
 61:7ae0 Pal_@
 61:7ae0 .data:8:8
 
-; Bank 64 (unfinished)
+; Bank 62 (unfinished)
 62:4000 Gfx_@
 62:4000 .image:400
 62:4400 Gfx_@
@@ -3043,6 +3256,7 @@
 62:6900 .image:240:w32
 
 ; Bank 63: Adapter not connected screen
+63:4000 Farcall_@
 63:402d .ptrtable:10:code
 63:407a Data_@
 63:407a .data:2006
@@ -3076,6 +3290,13 @@
 63:732a .data:1
 63:732b .data:4:2
 63:732f Call_@
+
+; Bank 65 (unfinished)
+65:4000 Farcall_@
+65:473f Farcall_@
+65:47c8 Farcall_@
+65:47ea Farcall_@
+65:487c Farcall_@
 
 ; Bank 66 (unfinished)
 66:4000 Gfx_@
@@ -3814,6 +4035,21 @@
 71:6f6f .data:2d0:14
 
 ; Bank 72: ???
+72:4000 Farcall_@
+72:4015 Farcall_@
+72:402a Farcall_@
+72:444f Farcall_@
+72:4578 Farcall_@
+72:461a Farcall_@
+72:472b Farcall_@
+72:4749 Farcall_@
+72:4767 Farcall_@
+72:4785 Farcall_@
+72:47a3 Farcall_@
+72:47d4 Farcall_@
+72:4805 Farcall_@
+72:4824 Farcall_@
+72:4872 Farcall_@
 72:48c0 Gfx_@
 72:48c0 .image:400
 72:4cc0 Map_@
@@ -4114,20 +4350,27 @@
 72:6395 .text:21
 72:63b6 .text:21
 72:63d7 Call_@
+72:63d8 Farcall_@
 72:6556 Data_@
 72:6556 .data:d
+72:6563 Farcall_@
 72:663b Call_@
 72:663e Call_@
 72:665a Call_@
 72:6677 Call_@
 72:667b Call_@
+72:669f Farcall_@
 72:6711 Call_@
+72:6712 Farcall_@
 72:6892 Data_@
 72:6892 .data:d
+72:689f Farcall_@
 72:6927 .ptrtable:a:code
 72:6998 Code_@
 72:69ad Code_@
 72:69ce Code_@
+72:69f3 Farcall_@
+72:6a6b Farcall_@
 72:6adf Data_@
 72:6adf .data:d
 72:6aec Data_@
@@ -4433,6 +4676,7 @@
 73:5f01 .data:e:2
 73:5f0f Sprites_@
 73:5f0f .ptrtable:8:data
+73:5f17 Farcall_@
 73:6096 .ptrtable:a:code
 73:6143 Call_@
 73:6149 Call_@
@@ -4589,14 +4833,28 @@
 74:4160 .text:4
 74:4164 .data:1
 74:4165 Call_@
+74:4207 Farcall_@
+74:4254 Farcall_@
+74:4296 Farcall_@
 74:44a0 Data_@
 74:44a0 .ptrtable:24:code
 74:44c4 Call_@
 74:4995 Call_@
 74:4c12 Call_@
 74:4c33 Call_@
+74:4f4f Farcall_@
+74:4f97 Farcall_@
+74:4fbe Farcall_@
+74:4ff2 Farcall_@
 74:511a Data_@
 74:511a .ptrtable:24:code
+74:5252 Farcall_@
+74:529f Farcall_@
+74:537d Farcall_@
+74:53e3 Farcall_@
+74:5417 Farcall_@
+74:5440 Farcall_@
+74:586e Farcall_@
 74:5905 uri_schemes
 74:5905 .ptrtable:18:data
 74:591d uri_scheme_http
@@ -4621,14 +4879,46 @@
 74:5959 .text:6
 74:595f uri_scheme_prospero
 74:595f .text:a
+74:5969 Farcall_@
+74:5981 Farcall_@
 74:59d8 String_@
 74:59d8 .text:8
+74:5a96 Farcall_@
+74:5aae Farcall_@
+74:5b4f Farcall_@
+74:5b5c Farcall_@
+74:5ba0 Farcall_@
 ; INSERT
 
 ; Bank 75: Mobile Adapter SDK
+75:4030 Farcall_@
 ; Not gonna disassemble here
 
+; Bank 7c (unfinished)
+7c:7b7c Farcall_@
+7c:7bb7 Farcall_@
+7c:7d1f Farcall_@
+
+; Bank 7d (unfinished)
+7d:7ba4 Farcall_@
+7d:7bb7 Farcall_@
+7d:7bc1 Farcall_@
+7d:7bf0 Farcall_@
+7d:7c00 Farcall_@
+
+; bank 7e (unfinished)
+7e:7c34 Farcall_@
+7e:7d19 Farcall_@
+7e:7d62 Farcall_@
+
 ; Bank 7f (unfinished)
+7f:4007 Farcall_@
+7f:405f Farcall_@
+7f:41a7 Farcall_@
+7f:42c3 Farcall_@
+7f:42ca Farcall_@
+7f:4bbc Farcall_@
+7f:4c42 Farcall_@
 7f:4d88 String_@
 7f:4d88 .text:d
 7f:4df2 String_@
@@ -4675,8 +4965,15 @@
 7f:4fd0 .data:c:2
 7f:4fdc Call_@
 7f:51ed Call_@
+7f:58b9 Farcall_@
 7f:5cb8 Call_@
 7f:61e8 Call_@
+7f:61fc Farcall_@
+7f:61ff Farcall_@
+7f:6218 Farcall_@
+7f:6235 Farcall_@
+7f:624f Farcall_@
+7f:627c Farcall_@
 7f:62b0 Gfx_@
 7f:62b0 .image:400
 7f:66b0 Gfx_@
@@ -4699,297 +4996,6 @@
 7f:6e20 Sprites_@
 7f:6e30 Sprites_@
 7f:6e40 Sprites_@
-7f:7b00 Pal_@
-7f:7b00 .data:28:8
-7f:7b50 Sprites_@
-7f:7b60 Sprites_@
-7f:7b70 Sprites_@
-7f:7b80 Sprites_@
-
-; Preliminary farcall targets
-22:4000 Farcall_@
-22:4fa9 Farcall_@
-22:4ff6 Farcall_@
-22:501d Farcall_@
-22:50fc Farcall_@
-23:4000 Farcall_@
-23:4c94 Farcall_@
-23:51c7 Farcall_@
-23:58c4 Farcall_@
-23:5fa2 Farcall_@
-23:6699 Farcall_@
-23:6f00 Farcall_@
-24:4018 Farcall_@
-25:4000 Farcall_@
-25:4a90 Farcall_@
-25:4b0d Farcall_@
-25:538a Farcall_@
-26:4000 Farcall_@
-26:5067 Farcall_@
-26:58dc Farcall_@
-27:4000 Farcall_@
-27:41bc Farcall_@
-27:41e3 Farcall_@
-27:4768 Farcall_@
-27:49b0 Farcall_@
-28:4000 Farcall_@
-28:41cb Farcall_@
-29:4000 Farcall_@
-29:44f6 Farcall_@
-29:5017 Farcall_@
-2a:4000 Farcall_@
-2a:5c3b Farcall_@
-2a:6f95 Farcall_@
-2a:7293 Farcall_@
-2b:4000 Farcall_@
-2b:6482 Farcall_@
-2b:7d92 Farcall_@
-2c:4000 Farcall_@
-2c:56fe Farcall_@
-2c:614d Farcall_@
-2c:665f Farcall_@
-2d:4000 Farcall_@
-2d:403c Farcall_@
-2d:408f Farcall_@
-2d:40dc Farcall_@
-2d:4133 Farcall_@
-2d:46e9 Farcall_@
-2d:4722 Farcall_@
-2d:4e06 Farcall_@
-2d:4e2d Farcall_@
-2d:4ec0 Farcall_@
-2d:5016 Farcall_@
-2d:65b0 Farcall_@
-2d:6c64 Farcall_@
-2d:70f4 Farcall_@
-2e:4000 Farcall_@
-2e:4f06 Farcall_@
-2e:55fa Farcall_@
-2f:4000 Farcall_@
-2f:4ac0 Farcall_@
-2f:5098 Farcall_@
-2f:54e1 Farcall_@
-2f:55cd Farcall_@
-2f:56b9 Farcall_@
-2f:57f2 Farcall_@
-2f:6d00 Farcall_@
-2f:7ebf Farcall_@
-48:4000 Farcall_@
-48:403e decompress_unk
-48:40a9 decompress
-48:415a Farcall_@
-48:4223 Farcall_@
-48:42d4 stringtable_unk
-48:4460 Farcall_@
-48:44e0 Farcall_@
-48:4540 Farcall_@
-48:4616 farmemput8
-48:4679 Farcall_@
-48:46c6 Farcall_@
-48:4728 Farcall_@
-48:4748 Farcall_@
-48:4899 Farcall_@
-48:48bb Farcall_@
-48:4920 Farcall_@
-48:498c Farcall_@
-48:49db Farcall_@
-48:4a4e Farcall_@
-48:4aab Farcall_@
-4c:4000 Farcall_@
-4c:46b8 Farcall_@
-4c:46d6 Farcall_@
-4c:46f4 Farcall_@
-4c:477e Farcall_@
-4c:47c4 Farcall_@
-4c:4840 Farcall_@
-4c:4b54 Farcall_@
-4c:4b7c Farcall_@
-4c:4b81 Farcall_@
-4c:4bc1 Farcall_@
-4c:4c4e Farcall_@
-4c:4c95 Farcall_@
-4c:4cf6 Farcall_@
-4c:4d6f Farcall_@
-4c:4db2 Farcall_@
-4c:4dfb Farcall_@
-4c:4f56 Farcall_@
-4c:5111 Farcall_@
-4c:5122 Farcall_@
-4c:51a1 Farcall_@
-4c:5274 Farcall_@
-4c:52a8 Farcall_@
-4e:45fe Farcall_@
-4e:4658 Farcall_@
-4e:46a3 Farcall_@
-4e:46cf Farcall_@
-4e:4749 Farcall_@
-4e:4795 Farcall_@
-4e:4866 Farcall_@
-4e:488d Farcall_@
-4e:48cb Farcall_@
-4e:493b Farcall_@
-4e:5204 Farcall_@
-4e:5274 Farcall_@
-4e:52e7 Farcall_@
-4e:53a1 Farcall_@
-4e:53d1 Farcall_@
-4e:5423 Farcall_@
-4e:5435 Farcall_@
-4e:5512 Farcall_@
-4e:56db Farcall_@
-4e:5716 Farcall_@
-4e:574d Farcall_@
-4e:5b69 Farcall_@
-4e:5c10 Farcall_@
-4e:5cb6 Farcall_@
-4e:5e11 Farcall_@
-4e:5e5b Farcall_@
-4e:5ec0 Farcall_@
-4e:5fb9 Farcall_@
-4e:604c Farcall_@
-4e:60a6 Farcall_@
-4e:60c5 Farcall_@
-4e:60e4 Farcall_@
-4e:612b Farcall_@
-4e:6196 Farcall_@
-4e:6291 Farcall_@
-4f:4000 pal_load
-4f:400e Farcall_@
-4f:404b Farcall_@
-4f:4166 Farcall_@
-4f:41e0 Farcall_@
-4f:42b4 Farcall_@
-4f:42ff Farcall_@
-4f:4370 Farcall_@
-4f:43b8 Farcall_@
-4f:4572 Farcall_@
-4f:45c6 Farcall_@
-4f:4604 Farcall_@
-4f:4668 Farcall_@
-50:4000 Farcall_@
-51:4000 Farcall_@
-51:404a Farcall_@
-51:4239 Farcall_@
-51:4245 Farcall_@
-51:425f Farcall_@
-51:70e0 Farcall_@
-51:7177 Farcall_@
-51:740d Farcall_@
-54:4011 Farcall_@
-54:403d Farcall_@
-54:405d Farcall_@
-54:4141 Farcall_@
-54:418c Farcall_@
-54:41a3 Farcall_@
-54:423c Farcall_@
-54:4266 Farcall_@
-54:4288 Farcall_@
-54:42fb Farcall_@
-54:4357 Farcall_@
-54:4483 Farcall_@
-54:4492 Farcall_@
-54:44fe Farcall_@
-54:451b Farcall_@
-54:4538 Farcall_@
-54:4552 Farcall_@
-54:4575 Farcall_@
-54:4748 Farcall_@
-54:4772 Farcall_@
-54:485c Farcall_@
-54:489b Farcall_@
-54:4914 Farcall_@
-54:4969 Farcall_@
-54:4cb0 Farcall_@
-54:4cf4 Farcall_@
-54:5386 Farcall_@
-54:53bb Farcall_@
-55:5ba2 Farcall_@
-55:5c8f Farcall_@
-55:651c Farcall_@
-55:6559 Farcall_@
-55:6cc6 Farcall_@
-55:6fcd Farcall_@
-55:7000 Farcall_@
-57:4000 Farcall_@
-57:53b9 Farcall_@
-57:541c Farcall_@
-5c:5150 Farcall_@
-63:4000 Farcall_@
-65:4000 Farcall_@
-65:473f Farcall_@
-65:47c8 Farcall_@
-65:47ea Farcall_@
-65:487c Farcall_@
-72:4000 Farcall_@
-72:4015 Farcall_@
-72:402a Farcall_@
-72:444f Farcall_@
-72:4578 Farcall_@
-72:461a Farcall_@
-72:472b Farcall_@
-72:4749 Farcall_@
-72:4767 Farcall_@
-72:4785 Farcall_@
-72:47a3 Farcall_@
-72:47d4 Farcall_@
-72:4805 Farcall_@
-72:4824 Farcall_@
-72:4872 Farcall_@
-72:63d8 Farcall_@
-72:6563 Farcall_@
-72:669f Farcall_@
-72:6712 Farcall_@
-72:689f Farcall_@
-72:69f3 Farcall_@
-72:6a6b Farcall_@
-73:5f17 Farcall_@
-74:4207 Farcall_@
-74:4254 Farcall_@
-74:4296 Farcall_@
-74:4f4f Farcall_@
-74:4f97 Farcall_@
-74:4fbe Farcall_@
-74:4ff2 Farcall_@
-74:5252 Farcall_@
-74:529f Farcall_@
-74:537d Farcall_@
-74:53e3 Farcall_@
-74:5417 Farcall_@
-74:5440 Farcall_@
-74:586e Farcall_@
-74:5969 Farcall_@
-74:5981 Farcall_@
-74:5a96 Farcall_@
-74:5aae Farcall_@
-74:5b4f Farcall_@
-74:5b5c Farcall_@
-74:5ba0 Farcall_@
-75:4030 Farcall_@
-7c:7b7c Farcall_@
-7c:7bb7 Farcall_@
-7c:7d1f Farcall_@
-7d:7ba4 Farcall_@
-7d:7bb7 Farcall_@
-7d:7bc1 Farcall_@
-7d:7bf0 Farcall_@
-7d:7c00 Farcall_@
-7e:7c34 Farcall_@
-7e:7d19 Farcall_@
-7e:7d62 Farcall_@
-7f:4007 Farcall_@
-7f:405f Farcall_@
-7f:41a7 Farcall_@
-7f:42c3 Farcall_@
-7f:42ca Farcall_@
-7f:4bbc Farcall_@
-7f:4c42 Farcall_@
-7f:58b9 Farcall_@
-7f:61fc Farcall_@
-7f:61ff Farcall_@
-7f:6218 Farcall_@
-7f:6235 Farcall_@
-7f:624f Farcall_@
-7f:627c Farcall_@
 7f:70fd Farcall_@
 7f:7116 Farcall_@
 7f:7125 Farcall_@
@@ -5014,6 +5020,12 @@
 7f:7578 Farcall_@
 7f:76c4 Farcall_@
 7f:7817 Farcall_@
+7f:7b00 Pal_@
+7f:7b00 .data:28:8
+7f:7b50 Sprites_@
+7f:7b60 Sprites_@
+7f:7b70 Sprites_@
+7f:7b80 Sprites_@
 
 00:c000 w_oam_shadow
 ; ds $a0
