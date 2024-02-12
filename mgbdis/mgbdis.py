@@ -538,6 +538,41 @@ class Bank:
             rom.data[pc +  6] == 0x3e and  # ld a, n8
             rom.data[pc +  8] == 0x06 and  # ld b, n8
             rom.data[pc + 10] == 0x0e and  # ld c, n8
+            rom.data[pc + 12] == 0xcd and  # farcall 00:0749
+            rom.data[pc + 13] == 0xd1 and
+            rom.data[pc + 14] == 0x06 and
+            rom.data[pc + 15] == 0x49 and
+            rom.data[pc + 16] == 0x07 and
+            rom.data[pc + 17] == 0x00):
+            instruction_name = "m_gfx_load_nocb"
+            length = 18
+            operands = []
+            reg_de = rom.data[pc + 1] | rom.data[pc + 2] << 8
+            reg_hl = rom.data[pc + 4] | rom.data[pc + 5] << 8
+            reg_a = rom.data[pc + 7]
+            reg_b = rom.data[pc + 9]
+            reg_c = rom.data[pc + 11]
+
+            operand_values = []
+            operand_values.append(hex_word(reg_de))
+
+            bank = reg_a
+            addr = reg_hl
+            label = self.symbols.get_label(bank, addr)
+            if label is not None:
+                operand_values.append(label)
+            else:
+                operand_values.append(hex_byte(bank))
+                operand_values.append(hex_word(addr))
+
+            operand_values.append(hex_byte(reg_b))
+            operand_values.append(hex_byte(reg_c))
+
+        if (rom.data[pc +  0] == 0x11 and  # ld de, n16
+            rom.data[pc +  3] == 0x21 and  # ld hl, n16
+            rom.data[pc +  6] == 0x3e and  # ld a, n8
+            rom.data[pc +  8] == 0x06 and  # ld b, n8
+            rom.data[pc + 10] == 0x0e and  # ld c, n8
             rom.data[pc + 12] == 0xcd and  # farcall 00:0787
             rom.data[pc + 13] == 0xd1 and
             rom.data[pc + 14] == 0x06 and
